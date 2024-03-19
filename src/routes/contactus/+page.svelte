@@ -1,5 +1,4 @@
 <script>
-    import { sendEmail } from "$lib/email.ts";
 
     let email = "";
     let subject = "";
@@ -13,16 +12,15 @@
             errorText = "Please fill in all the required boxes.";
             return;
         }
-        const response = await Promise.any([
-            sendEmail(
-                "gabriel.ganeles@gmail.org",
-                name + ": " + subject,
-                content,
-            ),
-            !isNaN(setTimeout(5000))
-        ]);
-        console.log(response)
-        if (response[0]!=undefined) {
+        const response = await fetch('/contactus', {
+			method: 'POST',
+			body: JSON.stringify({ name, subject, content, email }),
+			headers: {
+				'content-type': 'application/json'
+			}
+		});
+        const data = await response.json()
+        if (data != undefined) {
             email = "";
             subject = "";
             content = "";
@@ -42,7 +40,7 @@
     <div class="bg-black bg-opacity-30 w-full h-full">
         <div class="pt-20 flex flex-col w-full items-center">
             <div
-                class="bg-black flex flex-col bg-opacity-50 rounded-2xl p-4 max-w-[48rem] mb-8"
+                class="bg-black flex flex-col bg-opacity-50 rounded-2xl p-4 max-w-[48rem] fill mb-8"
             >
                 <div class="pb-8 text-lg text-center max-md:text-sm">
                     Apply to join the team:

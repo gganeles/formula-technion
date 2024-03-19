@@ -1,13 +1,12 @@
 import { dev } from "$app/environment";
 import { fromEmailAddress, fromEmailName } from "./constants";
-
 /**
  * Sends an email using the MailChannels API
  * @param to
  * @param subject
  * @param body
  */
-export async function sendEmail(to: string, subject: string, body: string) {
+export async function sendEmail(to, subject, body) {
   const request = new Request("https://api.mailchannels.net/tx/v1/send", {
     method: "POST",
     headers: {
@@ -23,7 +22,7 @@ export async function sendEmail(to: string, subject: string, body: string) {
         email: fromEmailAddress,
         name: fromEmailName
       },
-      subject,
+      subject: subject,
       content: [
         {
           type: "text/plain",
@@ -39,12 +38,16 @@ export async function sendEmail(to: string, subject: string, body: string) {
  Subject: ${subject}
  Body:
   ${body}`);
-    try {
-      const response = await fetch(request);
-
-      return response
-    } catch (err) {
-      return err
+    return false
+  } else {
+    const response = await fetch(request);
+    if (response.status >= 400) {
+      console.error(
+        `Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
+      );
+      return false
     }
+    return response
   }
+
 }
