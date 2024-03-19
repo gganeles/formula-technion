@@ -1,5 +1,5 @@
 <script>
-    const newsDir = "../src/lib/images/News/";
+    const newsDir = "/images/News/";
     const news = [
         "1.png",
         "3-2.png",

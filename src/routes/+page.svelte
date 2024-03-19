@@ -1,5 +1,5 @@
 <script>
-	const img_src = "../src/lib/images/IMG_7751.png";
+	const img_src = "/images/IMG_7751.png";
 	let h;
 </script>
 
@@ -52,7 +52,7 @@
 
 <style>
 	.picture {
-		background-image: url("../src/lib/images/IMG_7751.png");
+		background-image: url("/images/IMG_7751.png");
 		background-size: cover;
 		background-position: center;
 	}

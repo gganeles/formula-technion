@@ -1,11 +1,8 @@
 <script>
-	export const prerender = true;
-	
 	import "./styles.css";
 	import "../app.css";
 	import NavEl from "./NavEl.svelte";
-	import clickOutside from "./clickOutside";
-	import { slide, fade } from "svelte/transition";
+	import { fade } from "svelte/transition";
 	import HamburgerIcon from "../lib/HamburgerIcon.svelte"
 	let y = 0;
 	let w = 0;
@@ -41,6 +38,8 @@
 						'flex-row w-full justify-between items-center bg-formula bg-opacity-50'}"
 					transition:fade={{ duration: 100 }}
 				>
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<div
 						class="flex h-full p-2 px-6 justify-center items-center hover:cursor-pointer"
 						on:click={() => {
@@ -70,6 +69,8 @@
 				</div>
 			{/if}
 		{:else}
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div
 				class="flex h-full p-2 justify-center items-center hover:cursor-pointer"
 				on:click={() => {

@@ -4,9 +4,9 @@
 
     let y = 0; // This will hold the scroll position
 
-    const default_url = "../src/lib/images/formula.png";
+    const default_url = "/images/formula.png";
 
-    const teamDir = "../src/lib/images/meet_the_team/";
+    const teamDir = "/images/meet_the_team/";
     let teamList = [
         {
             title: "Aerodynamics",
@@ -408,7 +408,7 @@
     }
 
     .bg-image {
-        background-image: url("../src/lib/images/IMG_7843.png");
+        background-image: url("/images/IMG_7843.png");
         background-size: cover;
         background-position: center;
     }

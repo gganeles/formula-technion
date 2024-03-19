@@ -1,7 +1,7 @@
 <script>
     import SponsorGroup from "./SponsorGroup.svelte";
 
-    const sponsorsDir = "../src/lib/images/Sponsors/";
+    const sponsorsDir = "/images/Sponsors/";
     const golds = [
         {
             name: "Multipress",

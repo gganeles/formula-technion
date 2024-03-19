@@ -5,7 +5,7 @@
     import Chevrondoubleright from "./Chevrondoubleright.svelte"
 
     const default_src = "";
-    const carDir = "../src/lib/images/cars/";
+    const carDir = "/images/cars/";
     const cars = [
         {
             title: "Abbie/FT21-22E",
@@ -158,6 +158,8 @@
             slot="next"
             class="custom-arrow custom-arrow-next flex items-center justify-center absolute h-screen right-0"
         >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <i class="hover:cursor-pointer p-0" on:click={carousel.goToNext()}>
                 <Chevrondoubleright/>
             </i>
@@ -166,6 +168,8 @@
             slot="prev"
             class="custom-arrow custom-arrow-prev h-screen flex items-center justify-center absolute left-0 z-10"
         >
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
             <i class="w-fit hover:cursor-pointer p-0" on:click={carousel.goToPrev()}>
                 <Chevrondoubleleft/>
             </i>
@@ -174,6 +178,8 @@
             slot="dots" class='absolute bottom-3.5 h-3 custom-dots z-20 flex flex-row opacity-70 gap-0.5 items-center'
         >
             {#each Array(cars.length) as _, pageIndex (pageIndex)}
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <!-- svelte-ignore a11y-no-static-element-interactions -->
                 <div on:click={()=>carousel.goTo(pageIndex)} class='h-2.5 hover:cursor-pointer {currentPageIndex===pageIndex&&"w-custom"} bg-slate-500 first:rounded-l-full last:rounded-r-full w-8'>
                 </div>
             {/each}

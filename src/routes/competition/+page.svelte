@@ -87,7 +87,7 @@
         padding-bottom: 20px;
     }
     .picture {
-        background-image: url("../src/lib/images/cars/competition-bg.jpg");
+        background-image: url("/images/cars/competition-bg.jpg");
         background-size: cover;
         background-position: center;
     }
