@@ -39,12 +39,17 @@ export async function sendEmail(to: string, subject: string, body: string) {
  Subject: ${subject}
  Body:
   ${body}`);
-  } else {
-    const response = await fetch(request);
-    if (response.status >= 400) {
-      console.error(
-        `Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
-      );
+    try {
+      const response = await fetch(request);
+
+      console.log(response)
+      if (response.status >= 400) {
+        console.error(
+          `Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
+        );
+      }
+    } catch (err) {
+      console.log(err)
     }
   }
 }

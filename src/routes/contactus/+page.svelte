@@ -1,30 +1,35 @@
 <script>
+    import { sendEmail } from "$lib/email.ts";
+
     let email = "";
     let subject = "";
     let content = "";
     let name = "";
 
-    let errorText='';
+    let errorText = "";
 
     const handleClick = async () => {
         if (!email | !subject | !content | !name) {
-            errorText = "Please fill in all the required boxes."
-            return
+            errorText = "Please fill in all the required boxes.";
+            return;
         }
-        const response = await fetch("/contactus",{
-            method: "POST",
-            body: JSON.stringify({subj:name+": "+subject,text:content+"\nMy email is: "+email}),
-            headers: {
-				'content-type': 'application/json'
-			}
-        })
-        const result = await response.json()
-        if (result == "success") {
-            email=''
-            subject=''
-            content=''
-            name=''
-            alert("Message sent successfully!")
+        const response = await Promise.all([
+            sendEmail(
+                "gabriel.ganeles@gmail.org",
+                name + ": " + subject,
+                content,
+            ),
+            !isNaN(setTimeout(5000))?true:false,
+        ]);
+        console.log(response)
+        if (response[0]!=undefined) {
+            email = "";
+            subject = "";
+            content = "";
+            name = "";
+            alert("Message sent successfully!");
+        } else {
+            errorText = "error";
         }
     };
 </script>
@@ -34,15 +39,13 @@
 </svelte:head>
 
 <div class="picture h-full w-full">
-    <div class='bg-black bg-opacity-30 w-full h-full'>
-  
+    <div class="bg-black bg-opacity-30 w-full h-full">
         <div class="pt-20 flex flex-col w-full items-center">
             <div
                 class="bg-black flex flex-col bg-opacity-50 rounded-2xl p-4 max-w-[48rem] mb-8"
             >
                 <div class="pb-8 text-lg text-center max-md:text-sm">
-                    If you would like to join the team, feel free to fill in the
-                    application for the team you are looking to join:
+                    Apply to join the team:
                 </div>
                 <div
                     class="flex flex-row max-md:text-sm max-md:flex-wrap gap-2 justify-evenly"
@@ -87,6 +90,9 @@
                     <div>
                         Fill in your details and we will get back to you within
                         1-2 business days.
+                    </div>
+                    <div class="text-red-500">
+                        {errorText}
                     </div>
                 </div>
                 <form class="text-black flex flex-col gap-5 p-4 flex-1">
