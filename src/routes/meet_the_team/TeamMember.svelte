@@ -22,8 +22,3 @@
     <p class="text-xs text-center">{role}</p>
   {/if}
 </div>
-
-<style>
-  .team-member {
-  }
-</style>

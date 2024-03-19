@@ -20,7 +20,3 @@
     <p class='text-center'>{role}</p>
 </div>
 
-<style>
-    .team-leader {
-    }
-</style>

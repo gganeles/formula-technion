@@ -25,14 +25,3 @@
     </div>
     {/if}
 </div>
-
-<style>
-    .team-container {
-    }
-    .team-leaders {
-
-    }
-    .team-members {
-        
-    }
-  </style>

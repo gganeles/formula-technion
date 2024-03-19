@@ -2,13 +2,8 @@
 	import "./styles.css";
 	import "../app.css";
 	import NavEl from "./NavEl.svelte";
-	import { fade } from "svelte/transition";
-	import HamburgerIcon from "../lib/HamburgerIcon.svelte"
-	let y = 0;
-	let w = 0;
-	let toggle = false;
-	let navbar_colored = false;
-	$: navbar_colored =  smallScreen | (y > 1) ? true : false;
+	import { slide, fade } from "svelte/transition";
+	import HamburgerIcon from "../lib/HamburgerIcon.svelte";
 
 	const navbar_items = [
 		{ text: "News", href: "/news" },
@@ -18,11 +13,18 @@
 		{ text: "The Competition", href: "/competition" },
 	];
 
-	let smallScreen=false
-	$: smallScreen = w < 500 ? true : false;
+
+	let y;
+	let w;
+	let toggle = false;
+	let navbar_colored;
+	let smallScreen;
+	$: smallScreen = w < 800 ? true : false;
+	$: navbar_colored = smallScreen | (y > 1) ? true : false;
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window bind:scrollY={y}/>
+
 
 <div class="app w-full bg-color" bind:clientWidth={w}>
 	<ul
@@ -32,43 +34,7 @@
 			? ''
 			: 'flex-row'} h-14 {smallScreen && 'flex-col'}"
 	>
-		{#if smallScreen}
-				<div
-					class="flex h-full {smallScreen &&
-						'flex-row w-full justify-between items-center bg-formula bg-opacity-50'}"
-					transition:fade={{ duration: 100 }}
-				>
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<div
-						class="flex h-full p-2 px-6 justify-center items-center hover:cursor-pointer"
-						on:click={() => {
-							window.location = "/";
-						}}
-					>
-						<img
-							class="h-full"
-							src="/FT22_Logo_white.png"
-							alt="formula logo"
-						/>
-					</div>
-					<button class='' on:click={() => (toggle = !toggle)}>
-						<HamburgerIcon width={60}/>
-					</button>
-				</div>
-			{#if toggle}
-				<div class="flex flex-col w-full bg-formula">
-					{#each navbar_items as nav}
-						<NavEl
-							text={nav.text}
-							href={nav.href}
-							bind:scrolled={navbar_colored}
-							{smallScreen}
-						/>
-					{/each}
-				</div>
-			{/if}
-		{:else}
+		{#if !smallScreen}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div
@@ -90,6 +56,48 @@
 					bind:scrolled={navbar_colored}
 				/>
 			{/each}
+			<button class='md:absolute right-8 bg-yellow-500 py-1 px-3 rounded-full' on:click={()=>window.location="/contactus"}>
+				Contact Us
+			</button>
+		{:else}
+			<div
+				class="flex h-full {smallScreen &&
+					'flex-row w-full justify-between items-center bg-formula bg-opacity-50'}"
+				transition:fade={{ duration: 100 }}
+			>
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<div
+					class="flex h-full p-2 px-6 justify-center items-center hover:cursor-pointer"
+					on:click={() => {
+						window.location = "/";
+					}}
+				>
+					<img
+						class="h-full"
+						src="/FT22_Logo_white.png"
+						alt="formula logo"
+					/>
+				</div>
+				<button class="" on:click={() => (toggle = !toggle)}>
+					<HamburgerIcon width={60} />
+				</button>
+			</div>
+			{#if toggle}
+				<div class="flex flex-col w-full bg-formula">
+					{#each navbar_items as nav}
+						<NavEl
+							text={nav.text}
+							href={nav.href}
+							bind:scrolled={navbar_colored}
+							{smallScreen}
+						/>
+					{/each}
+					<button transition:slide|global class='p-8 text-left w-full bg-yellow-500' on:click={()=>window.location="/contactus"}>
+						Contact Us
+					</button>
+				</div>
+			{/if}
 		{/if}
 	</ul>
 	<main class="h-full text-white z-1">
@@ -102,12 +110,19 @@
 			Feel free to reach out to us via our social media:
 		</div>
 		<div class="flex flex-row p-4 w-full justify-evenly">
-			<a href="mailto:formula@technion.ac.il">Email</a>
+			<a href="mailto:formula@technion.ac.il">
+				<img src="/email.png" alt='email' class="w-14 h-14"/>
+			</a>
 			<a href="https://il.linkedin.com/company/formulatechnion"
-				>LinkedIn</a
+				><img src="/in_1.png" alt='linkedin' class='w-14 h-14'/>
+			</a
 			>
-			<a href="https://www.facebook.com/TechnionFSAE">Facebook</a>
-			<a href="https://www.instagram.com/formulatechnion/">Instagram</a>
+			<a href="https://www.facebook.com/TechnionFSAE">
+				<img src="/facebook-logo-2019_1.png" alt='facebook' class='w-14 h-14'/>
+			</a>
+			<a href="https://www.instagram.com/formulatechnion/">
+				<img src='/instagram-logo-2016-svg_1.png' alt='instagram' class='w-14 h-14'/>
+			</a>
 		</div>
 	</footer>
 </div>

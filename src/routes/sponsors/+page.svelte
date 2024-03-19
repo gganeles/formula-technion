@@ -158,7 +158,7 @@
 
 <style>
     .picture {
-        background-image: url("../src/lib/images/Sponsors/car.jpg");
+        background-image: url("/images/Sponsors/car.jpg");
         background-size: cover;
         background-position: 60% 40%;
     }
