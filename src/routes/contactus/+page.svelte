@@ -4,10 +4,36 @@
     let content = "";
     let name = "";
 
-    const handleClick = () => {};
+    let errorText='';
+
+    const handleClick = async () => {
+        if (!email | !subject | !content | !name) {
+            errorText = "Please fill in all the required boxes."
+            return
+        }
+        const response = await fetch("/contactus",{
+            method: "POST",
+            body: JSON.stringify({subj:name+": "+subject,text:content+"\nMy email is: "+email}),
+            headers: {
+				'content-type': 'application/json'
+			}
+        })
+        const result = await response.json()
+        if (result == "success") {
+            email=''
+            subject=''
+            content=''
+            name=''
+            alert("Message sent successfully!")
+        }
+    };
 </script>
 
-<div class="picture h-[80vh]">
+<svelte:head>
+    <title>Contact Us</title>
+</svelte:head>
+
+<div class="picture h-full w-full">
     <div class='bg-black bg-opacity-30 w-full h-full'>
   
         <div class="pt-20 flex flex-col w-full items-center">
@@ -19,7 +45,7 @@
                     application for the team you are looking to join:
                 </div>
                 <div
-                    class="flex flex-row justify-between max-md:text-xs max-md:flex-wrap gap-2 max-md:justify-evenly"
+                    class="flex flex-row max-md:text-sm max-md:flex-wrap gap-2 justify-evenly"
                 >
                     <a
                         class="rounded-full"
@@ -54,10 +80,10 @@
                 </div>
             </div>
             <div
-                class="bg-black flex flex-row bg-opacity-50 rounded-2xl max-w-[48rem]"
+                class="bg-black flex flex-row max-sm:flex-col bg-opacity-50 rounded-2xl max-w-[48rem]"
             >
                 <div class="p-4 flex-1">
-                    <div class="text-3xl">Contact Us!</div>
+                    <div class="text-3xl max-sm:text-xl">Contact Us!</div>
                     <div>
                         Fill in your details and we will get back to you within
                         1-2 business days.
@@ -71,7 +97,7 @@
                     />
                     <input
                         bind:value={email}
-                        placeholder="Email"
+                        placeholder="Email or Phone#"
                         class="p-2 rounded-md"
                     />
                     <input
