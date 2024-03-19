@@ -13,42 +13,42 @@
             teamLeaders: [
                 {
                     name: "Roi Baruch",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Roi Baruch's picture if available
+                    picture_url: default_url, // Replace with actual URL of Roi Baruch's picture if available
                     role: "Team Leader",
                 },
             ],
             teamMembers: [
                 {
                     name: "Yahav Bahalker",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Yahav Bahalker's picture if available
+                    picture_url: default_url, // Replace with actual URL of Yahav Bahalker's picture if available
                 },
                 {
                     name: "Daniel Pearson",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Daniel Pearson's picture if available
+                    picture_url: default_url, // Replace with actual URL of Daniel Pearson's picture if available
                 },
                 {
                     name: "Bader Abu Hjoul",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Bader Abu Hjoul's picture if available
+                    picture_url: default_url, // Replace with actual URL of Bader Abu Hjoul's picture if available
                 },
                 {
                     name: "Lior Zehavi",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Lior Zehavi's picture if available
+                    picture_url: default_url, // Replace with actual URL of Lior Zehavi's picture if available
                 },
                 {
                     name: "Tzlil Oren",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Tzlil Oren's picture if available
+                    picture_url: default_url, // Replace with actual URL of Tzlil Oren's picture if available
                 },
                 {
                     name: "Dan Hunter",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Dan Hunter's picture if available
+                    picture_url: default_url, // Replace with actual URL of Dan Hunter's picture if available
                 },
                 {
                     name: "Gadban Gadban",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Gadban Gadban's picture if available
+                    picture_url: default_url, // Replace with actual URL of Gadban Gadban's picture if available
                 },
                 {
                     name: "Michal Amar",
-                    picture_url: "../src/lib/images/formula.png", // Replace with actual URL of Michal Amar's picture if available
+                    picture_url: default_url, // Replace with actual URL of Michal Amar's picture if available
                 },
             ],
         },
@@ -408,7 +408,7 @@
     }
 
     .bg-image {
-        background-image: url("/images/IMG_7843.png");
+        background-image: url("/images/img_7843.webp");
         background-size: cover;
         background-position: center;
     }

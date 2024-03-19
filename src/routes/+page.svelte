@@ -52,7 +52,7 @@
 
 <style>
 	.picture {
-		background-image: url("/images/IMG_7751.png");
+		background-image: url("/images/img_7751.webp");
 		background-size: cover;
 		background-position: center;
 	}

@@ -8,7 +8,7 @@
 	let w = 0;
 	let toggle = false;
 	let navbar_colored = false;
-	$: navbar_colored = (y > 1) | smallScreen ? true : false;
+	$: navbar_colored =  smallScreen | (y > 1) ? true : false;
 
 	const navbar_items = [
 		{ text: "News", href: "/news" },
