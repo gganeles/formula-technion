@@ -1,4 +1,6 @@
 <script>
+	export const prerender = true;
+	
 	import "./styles.css";
 	import "../app.css";
 	import NavEl from "./NavEl.svelte";
@@ -30,11 +32,10 @@
 		class="flex z-20 navbar {navbar_colored &&
 			'bg-formula'} text-white text-lg fixed items-center w-full {toggle &&
 		smallScreen
-			? 'flex-col'
+			? ''
 			: 'flex-row'} h-14 {smallScreen && 'flex-col'}"
 	>
 		{#if smallScreen}
-			
 				<div
 					class="flex h-full {smallScreen &&
 						'flex-row w-full justify-between items-center bg-formula bg-opacity-50'}"
@@ -56,7 +57,6 @@
 						<HamburgerIcon width={60}/>
 					</button>
 				</div>
-			
 			{#if toggle}
 				<div class="flex flex-col w-full bg-formula">
 					{#each navbar_items as nav}
