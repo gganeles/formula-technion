@@ -12,14 +12,14 @@
     <img
       src={picture_url}
       
-      class='h-[250px] max-md:h-[166.6px] object-cover -translate-y-[45px]'
+      class='h-[15rem] max-md:h-[10rem] object-cover -translate-y-[45px] max-md:-translate-y-[28px]'
       style="object-position:75% 70%;"
       alt={name}
     />
   </div>
-  <h4 class="text-sm max-md:text-xs p-2 max-md:pt-2 max-md:p-0">{name}</h4>
+  <h4 class="text-sm max-md:text-xs text-center">{name}</h4>
   {#if role}
-    <p class="text-xs">{role}</p>
+    <p class="text-xs text-center">{role}</p>
   {/if}
 </div>
 

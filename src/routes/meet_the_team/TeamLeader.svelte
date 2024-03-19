@@ -12,12 +12,12 @@
         <img
             src={picture_url}
             alt={name}
-            class="h-[350px] max-md:h-[300.6px] object-cover -translate-y-[26.7px]"
+            class="h-[350px] max-md:h-[250.6px] object-cover -translate-y-[26.7px] max-md:-translate-y-[40px]"
             style="object-position:75% 70%;"
         />
     </div>
-    <h3 class="text-xl">{name}</h3>
-    <p>{role}</p>
+    <h3 class="text-xl text-center">{name}</h3>
+    <p class='text-center'>{role}</p>
 </div>
 
 <style>
