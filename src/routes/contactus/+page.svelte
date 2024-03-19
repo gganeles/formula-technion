@@ -13,13 +13,13 @@
             errorText = "Please fill in all the required boxes.";
             return;
         }
-        const response = await Promise.all([
+        const response = await Promise.any([
             sendEmail(
                 "gabriel.ganeles@gmail.org",
                 name + ": " + subject,
                 content,
             ),
-            !isNaN(setTimeout(5000))?true:false,
+            !isNaN(setTimeout(5000))
         ]);
         console.log(response)
         if (response[0]!=undefined) {
@@ -29,7 +29,7 @@
             name = "";
             alert("Message sent successfully!");
         } else {
-            errorText = "error";
+            errorText = response;
         }
     };
 </script>

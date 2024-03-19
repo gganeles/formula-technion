@@ -42,14 +42,9 @@ export async function sendEmail(to: string, subject: string, body: string) {
     try {
       const response = await fetch(request);
 
-      console.log(response)
-      if (response.status >= 400) {
-        console.error(
-          `Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
-        );
-      }
+      return response
     } catch (err) {
-      console.log(err)
+      return err
     }
   }
 }
