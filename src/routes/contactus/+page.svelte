@@ -20,15 +20,13 @@
 			}
 		});
         const data = await response.json()
-        errorText = typeof data == "string"|typeof data == "boolean"?"error":Object.entries(data)
+        errorText = typeof data == "Object"?Object.entries(data):data
         if (data) {
             email = "";
             subject = "";
             content = "";
             name = "";
             alert("Message sent successfully!");
-        } else {
-            errorText = typeof data == "string"|typeof data == "boolean"?"error":Object.entries(data)
         }
     };
 </script>
