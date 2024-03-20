@@ -7,11 +7,11 @@
 	import HamburgerIcon from "../lib/HamburgerIcon.svelte";
 
 	const navbar_items = [
-		{ text: "News", href: "/news" },
-		{ text: "Meet the Team", href: "/meet_the_team" },
-		{ text: "Cars", href: "/cars" },
-		{ text: "Our Sponsors", href: "/sponsors" },
-		{ text: "The Competition", href: "/competition" },
+		{ text: "NEWS", href: "/news" },
+		{ text: "MEET THE TEAM", href: "/meet_the_team" },
+		{ text: "CARS", href: "/cars" },
+		{ text: "OUR SPONSORS", href: "/sponsors" },
+		{ text: "THE COMPETITION", href: "/competition" },
 	];
 
 	let y;
@@ -117,7 +117,7 @@
 			class="z-10 text-white text-lg flex flex-col items-center bg-darkgrey py-10"
 		>
 			<div class="pb-8">
-				Feel free to reach out to us via our social media:
+				Get in touch with us via social media
 			</div>
 			<div class="flex flex-row p-4 w-full justify-evenly">
 				<a href="mailto:formula@technion.ac.il">
