@@ -20,15 +20,15 @@
             teamMembers: [
                 {
                     name: "Yahav Bahalker",
-                    picture_url: default_url, // Replace with actual URL of Yahav Bahalker's picture if available
+                    picture_url: teamDir + "YahavBahalker.JPG", // Replace with actual URL of Yahav Bahalker's picture if available
                 },
                 {
                     name: "Daniel Pearson",
-                    picture_url: default_url, // Replace with actual URL of Daniel Pearson's picture if available
+                    picture_url: teamDir + "DanielPearson.JPG", // Replace with actual URL of Daniel Pearson's picture if available
                 },
                 {
                     name: "Bader Abu Hjoul",
-                    picture_url: default_url, // Replace with actual URL of Bader Abu Hjoul's picture if available
+                    picture_url: teamDir + "BaderAbuHjoul.JPG", // Replace with actual URL of Bader Abu Hjoul's picture if available
                 },
                 {
                     name: "Lior Zehavi",
@@ -78,17 +78,17 @@
                 {
                     name: "Bracha Silverman",
                     role: "Team Leader",
-                    picture_url: teamDir + "IMG_7585.JPG",
+                    picture_url: teamDir + "BrochaSilverman.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Tomer Ganz",
-                    picture_url: default_url,
+                    picture_url: teamDir + "TomerGanz.JPG",
                 },
                 {
                     name: "Yonatan Kennedy",
-                    picture_url: teamDir + "IMG_7557.JPG",
+                    picture_url: teamDir + "YonatanKennedy",
                 },
                 {
                     name: "Neave Menahem",
@@ -102,13 +102,13 @@
                 {
                     name: "Charlie Shrem",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "CharlieShrem.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Ahmed Ganaim",
-                    picture_url: default_url,
+                    picture_url: teamDir + "AhmedGanaim.JPG",
                 },
                 {
                     name: "Taufeeq Saed",
@@ -122,14 +122,14 @@
                 {
                     name: "Ilia Fridburg",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "IliaFridburg.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Gabriel Ganeles",
                     role: "PCB Design",
-                    picture_url: default_url,
+                    picture_url: teamDir + "GabeGaneles.JPG",
                 },
                 {
                     name: "Yahli Sofer",
@@ -139,7 +139,7 @@
                 {
                     name: "Itay Mal",
                     role: "Communication Protocols",
-                    picture_url: teamDir + "IMG_7553.JPG",
+                    picture_url: teamDir + "ItayMal",
                 },
             ],
         },
@@ -149,17 +149,17 @@
                 {
                     name: "Haim Chocron",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "HaimChocron.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Sharbel Roshrosh",
-                    picture_url: default_url,
+                    picture_url: teamDir + "SharbelRoshRosh.JPG",
                 },
                 {
                     name: "Noam Hannoun",
-                    picture_url: default_url,
+                    picture_url: teamDir + "NoamHannoun.JPG",
                 },
             ],
         },
@@ -169,7 +169,7 @@
                 {
                     name: "Ayham Badarneh",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "AyhamBadarneh.JPG",
                 },
             ],
             teamMembers: [
@@ -209,17 +209,17 @@
                 {
                     name: "Jawad Soliman",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "JawadSoliman.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Jad Shbita",
-                    picture_url: default_url,
+                    picture_url: teamDir + "JadShbita.JPG",
                 },
                 {
                     name: "Marwa Lahwani",
-                    picture_url: default_url,
+                    picture_url: teamDir + "MarwaLahwani.JPG"
                 },
             ],
         },
@@ -229,21 +229,21 @@
                 {
                     name: "Alessio Moscati",
                     role: "Team Leader",
-                    picture_url: teamDir + "IMG_7571.JPG",
+                    picture_url: teamDir + "AlessioMoscati.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Yousef Bawaqni",
-                    picture_url: default_url,
+                    picture_url: teamDir + "YousefBawaqni.JPG",
                 },
                 {
                     name: "Aseel Ayoub",
-                    picture_url: teamDir + "IMG_7607.JPG",
+                    picture_url: teamDir + "AseelAyuob",
                 },
                 {
                     name: "Daniel Engelberg",
-                    picture_url: default_url,
+                    picture_url: teamDir + "DanielEngelberg.JPG",
                 },
                 {
                     name: "Karem Qasim",
@@ -257,7 +257,7 @@
                 {
                     name: "Benjamin Levin",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "BenLevin.JPG",
                 },
             ],
         },
@@ -273,11 +273,11 @@
             teamMembers: [
                 {
                     name: "Rand Mahmoud",
-                    picture_url: default_url,
+                    picture_url: teamDir + "RandMahmoud.JPG",
                 },
                 {
                     name: "Ofek Shechter",
-                    picture_url: default_url,
+                    picture_url: teamDir + "OfekShechter.JPG",
                 },
             ],
         },
@@ -287,19 +287,19 @@
                 {
                     name: "Hodi Sackstein",
                     role: "Team Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "HodiSackstein.JPG",
                 },
             ],
             teamMembers: [
                 {
                     name: "Ryan Fodi",
                     role: "Media & Marketing",
-                    picture_url: default_url,
+                    picture_url: teamDir + "RyanFodi.JPG",
                 },
                 {
                     name: "Raquel Goldsztejn",
                     role: "Event Manager",
-                    picture_url: default_url,
+                    picture_url: teamDir + "RaquelGoldzstejn.JPG",
                 },
             ],
         },
@@ -314,27 +314,27 @@
         {
             name: "Charlie Shrem",
             role: "Electrical Chief Engineer",
-            picture_url: default_url,
+            picture_url: teamDir + "CharlieShrem.JPG",
         },
         {
             name: "Masaad Ayoub",
             role: "Mechanical Chief Engineer",
-            picture_url: teamDir+"IMG_7578.JPG",
+            picture_url: teamDir+"Masaadchul.JPG",
         },
         {
             name: "Bracha Silverman",
             role: "Electronics Chief Engineer",
-            picture_url: teamDir + "IMG_7585.JPG",
+            picture_url: teamDir + "BrochaSilverman.JPG",
         },
         {
             name: "Ilia Fridburg",
             role: "Control Chief Engineer",
-            picture_url: default_url,
+            picture_url: teamDir + "IliaFridburg.JPG",
         },
         {
             name: "Karina Shcherbachov",
             role: "PR Manager",
-            picture_url: default_url,
+            picture_url: teamDir + "Karina.JPG",
         },
     ];
 
@@ -365,12 +365,12 @@
                     <FormulaLeader
                         name={"Ali Hazboun"}
                         role={"Team Leader"}
-                        picture_url={teamDir + "IMG_7595.JPG"}
+                        picture_url={teamDir + "AliHazboun.JPG"}
                     />
                     <FormulaLeader
                         name={"Majd Jaraysi"}
                         role={""}
-                        picture_url={teamDir+ "IMG_7631.JPG"}
+                        picture_url={teamDir+ "MajdJaraysi.JPG"}
                     />
                 </div>
                 <div class="grid grid-cols-3 items-start">
