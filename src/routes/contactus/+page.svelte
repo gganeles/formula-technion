@@ -20,7 +20,8 @@
 			}
 		});
         const data = await response.json()
-        if (data != undefined) {
+        console.log(data)
+        if (data.success) {
             email = "";
             subject = "";
             content = "";
