@@ -20,15 +20,14 @@
 			}
 		});
         const data = await response.json()
-        console.log(r)
-        if (data.success) {
+        if (data) {
             email = "";
             subject = "";
             content = "";
             name = "";
             alert("Message sent successfully!");
         } else {
-            errorText = Object.entries(response);
+            errorText = typeof data == "string"|typeof data == "boolean"?"error":Object.entries(data)
         }
     };
 </script>
@@ -36,7 +35,6 @@
 <svelte:head>
     <title>Contact Us</title>
 </svelte:head>
-
 <div class="picture h-full w-full">
     <div class="bg-black bg-opacity-30 w-full h-full">
         <div class="pt-20 flex flex-col w-full items-center">
