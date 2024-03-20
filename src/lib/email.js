@@ -34,20 +34,19 @@ export async function sendEmail(to, subject, body) {
 
   if (dev) {
     console.log(`Sending email:
- To: ${to}
- Subject: ${subject}
- Body:
-  ${body}`);
-    return false
+    To: ${to}
+    Subject: ${subject}
+    Body:
+      ${body}`);
+        return false
   } else {
     const response = await fetch(request);
     if (response.status >= 400) {
       console.error(
         `Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
       );
-      return response
     }
-    return response
+    return await response.json()
   }
 
 }
