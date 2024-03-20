@@ -10,7 +10,7 @@
 <div class="relative">
 	<div class="h-screen picture"></div>
 	<div
-		class="absolute p-4 h-fit w-fit bottom-10 left-5 text-3xl font-thin text-white rounded-lg"
+		class="absolute p-4 h-fit w-fit bottom-10 left-5 text-3xl text-white rounded-lg"
 	>
 		<div class="text-5xl md:text-8xl">Formula Technion</div>
 		<div class="text-slate-400 md:text-4xl">

@@ -16,7 +16,7 @@
         </div>
     {/if}
     {#if teamMembers && teamMembers.length != 0}
-    <div class='max-md:justify-center justify-end self-end'>
+    <div class='max-md:justify-center justify-end md:self-end'>
         <div class="team-members flex flex-row max-md:justify-center flex-wrap">
             {#each teamMembers as member}
                 <TeamMember name={member.name} picture_url={member.picture_url} role={member.role} />

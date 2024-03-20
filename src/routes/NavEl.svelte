@@ -1,12 +1,14 @@
 <script>
-    import { slide } from "svelte/transition";
-
     export let text = "";
     export let href = "";
     export let scrolled = false;
     export let smallScreen = false;
     let hovered = false;
 </script>
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
 <li
     class="h-full flex items-center navitem text-md p-4 max-md:p-2 max-sm:text-lg lg:text-xl {hovered &&

@@ -19,7 +19,7 @@
 	let toggle = false;
 	let navbar_colored;
 	let smallScreen;
-	$: smallScreen = w < 800 ? true : false;
+	$: smallScreen = w < 1100 ? true : false;
 	$: navbar_colored = smallScreen | (y > 1) ? true : false;
 </script>
 
@@ -59,7 +59,7 @@
 				class="md:absolute right-8 bg-yellow-500 py-1 px-3 rounded-full"
 				on:click={() => (window.location = "/contactus")}
 			>
-				Contact Us
+				CONTACT US
 			</button>
 		{:else}
 			<div
@@ -70,7 +70,7 @@
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div
-					class="flex h-full p-2 px-6 justify-center items-center hover:cursor-pointer"
+					class="flex h-full p-1 px-2.5 justify-center items-center hover:cursor-pointer"
 					on:click={() => {
 						window.location = "/";
 					}}
@@ -82,7 +82,7 @@
 					/>
 				</div>
 				<button class="" on:click={() => (toggle = !toggle)}>
-					<HamburgerIcon width={60} />
+					<HamburgerIcon width={60}/>
 				</button>
 			</div>
 			{#if toggle}
@@ -103,7 +103,7 @@
 					class="p-8 text-left w-full bg-yellow-500"
 					on:click={() => (window.location = "/contactus")}
 				>
-					Contact Us
+					CONTACT US
 				</button>
 				</div>
 			{/if}
@@ -117,7 +117,7 @@
 			class="z-10 text-white text-lg flex flex-col items-center bg-darkgrey py-10"
 		>
 			<div class="pb-8">
-				Get in touch with us via social media
+				Get in touch with us via social media:
 			</div>
 			<div class="flex flex-row p-4 w-full justify-evenly">
 				<a href="mailto:formula@technion.ac.il">
