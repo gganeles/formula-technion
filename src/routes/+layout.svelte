@@ -1,4 +1,5 @@
 <script>
+	import { page } from "$app/stores";
 	import "./styles.css";
 	import "../app.css";
 	import NavEl from "./NavEl.svelte";
@@ -13,7 +14,6 @@
 		{ text: "The Competition", href: "/competition" },
 	];
 
-
 	let y;
 	let w;
 	let toggle = false;
@@ -23,8 +23,7 @@
 	$: navbar_colored = smallScreen | (y > 1) ? true : false;
 </script>
 
-<svelte:window bind:scrollY={y}/>
-
+<svelte:window bind:scrollY={y} />
 
 <div class="app w-full bg-color" bind:clientWidth={w}>
 	<ul
@@ -56,7 +55,10 @@
 					bind:scrolled={navbar_colored}
 				/>
 			{/each}
-			<button class='md:absolute right-8 bg-yellow-500 py-1 px-3 rounded-full' on:click={()=>window.location="/contactus"}>
+			<button
+				class="md:absolute right-8 bg-yellow-500 py-1 px-3 rounded-full"
+				on:click={() => (window.location = "/contactus")}
+			>
 				Contact Us
 			</button>
 		{:else}
@@ -85,17 +87,24 @@
 			</div>
 			{#if toggle}
 				<div class="flex flex-col w-full bg-formula">
+
 					{#each navbar_items as nav}
+						<div transition:slide|global={{duration:smallScreen?300:0}}>
 						<NavEl
 							text={nav.text}
 							href={nav.href}
 							bind:scrolled={navbar_colored}
 							{smallScreen}
 						/>
+					</div>
 					{/each}
-					<button transition:slide|global class='p-8 text-left w-full bg-yellow-500' on:click={()=>window.location="/contactus"}>
-						Contact Us
-					</button>
+					<button
+					transition:slide|global
+					class="p-8 text-left w-full bg-yellow-500"
+					on:click={() => (window.location = "/contactus")}
+				>
+					Contact Us
+				</button>
 				</div>
 			{/if}
 		{/if}
@@ -103,28 +112,37 @@
 	<main class="h-full text-white z-1">
 		<slot />
 	</main>
-	<footer
-		class="z-10 text-white text-lg flex flex-col items-center bg-darkgrey py-10"
-	>
-		<div class="pb-8">
-			Feel free to reach out to us via our social media:
-		</div>
-		<div class="flex flex-row p-4 w-full justify-evenly">
-			<a href="mailto:formula@technion.ac.il">
-				<img src="/email.png" alt='email' class="w-14 h-14"/>
-			</a>
-			<a href="https://il.linkedin.com/company/formulatechnion"
-				><img src="/in_1.png" alt='linkedin' class='w-14 h-14'/>
-			</a
-			>
-			<a href="https://www.facebook.com/TechnionFSAE">
-				<img src="/facebook-logo-2019_1.png" alt='facebook' class='w-14 h-14'/>
-			</a>
-			<a href="https://www.instagram.com/formulatechnion/">
-				<img src='/instagram-logo-2016-svg_1.png' alt='instagram' class='w-14 h-14'/>
-			</a>
-		</div>
-	</footer>
+	{#if $page.route.id != "/cars"}
+		<footer
+			class="z-10 text-white text-lg flex flex-col items-center bg-darkgrey py-10"
+		>
+			<div class="pb-8">
+				Feel free to reach out to us via our social media:
+			</div>
+			<div class="flex flex-row p-4 w-full justify-evenly">
+				<a href="mailto:formula@technion.ac.il">
+					<img src="/email.png" alt="email" class="w-14 h-14" />
+				</a>
+				<a href="https://il.linkedin.com/company/formulatechnion"
+					><img src="/in_1.png" alt="linkedin" class="w-14 h-14" />
+				</a>
+				<a href="https://www.facebook.com/TechnionFSAE">
+					<img
+						src="/facebook-logo-2019_1.png"
+						alt="facebook"
+						class="w-14 h-14"
+					/>
+				</a>
+				<a href="https://www.instagram.com/formulatechnion/">
+					<img
+						src="/instagram-logo-2016-svg_1.png"
+						alt="instagram"
+						class="w-14 h-14"
+					/>
+				</a>
+			</div>
+		</footer>
+	{/if}
 </div>
 
 <style>

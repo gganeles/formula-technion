@@ -1,2 +1,2 @@
 export const fromEmailName = "Formula Technion";
-export const fromEmailAddress = "formula@formula-technion.pages.dev";
+export const fromEmailAddress = "formula@formulatechnion.com";

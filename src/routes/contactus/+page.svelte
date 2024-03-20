@@ -35,11 +35,11 @@
 <svelte:head>
     <title>Contact Us</title>
 </svelte:head>
-<div class="picture h-full w-full">
+<div class="flex h-[100%] w-full picture">
     <div class="bg-black bg-opacity-30 w-full h-full">
         <div class="pt-20 flex flex-col w-full items-center">
             <div
-                class="bg-black flex flex-col bg-opacity-50 rounded-2xl p-4 max-w-[48rem] fill mb-8"
+                class="bg-black flex flex-col bg-opacity-50 sm:rounded-2xl p-4 max-w-[48rem] fill mb-8"
             >
                 <div class="pb-8 text-lg text-center max-md:text-sm">
                     Apply to join the team:
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div
-                class="bg-black flex flex-row max-sm:flex-col bg-opacity-50 rounded-2xl max-w-[48rem]"
+                class="bg-black flex flex-row max-sm:flex-col bg-opacity-50 sm:rounded-2xl max-w-[48rem]"
             >
                 <div class="p-4 flex-1">
                     <div class="text-3xl max-sm:text-xl">Contact Us!</div>

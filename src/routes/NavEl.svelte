@@ -1,5 +1,5 @@
 <script>
-    import {slide} from "svelte/transition"
+    import { slide } from "svelte/transition";
 
     export let text = "";
     export let href = "";
@@ -8,18 +8,16 @@
     let hovered = false;
 </script>
 
-<li 
+<li
     class="h-full flex items-center navitem text-md p-4 max-md:p-2 max-sm:text-lg lg:text-xl {hovered &&
         scrolled &&
         'this hover:cursor-pointer'}
-        {smallScreen&&"p-custom"}"
+        {smallScreen && 'p-custom'}"
     on:mouseenter={() => (hovered = true)}
     on:mouseleave={() => (hovered = false)}
     on:click={() => {
         if (scrolled) window.location = href;
-    }
-    }
-    transition:slide|global={{duration:smallScreen?300:0}}
+    }}
 >
     <a {href}>
         {text}

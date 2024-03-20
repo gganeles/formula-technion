@@ -187,7 +187,6 @@
     </Carousel>
 </div>
 
-
 <style>
     .w-custom {
         width: 52px;
