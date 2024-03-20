@@ -5,7 +5,7 @@ import { json }from '@sveltejs/kit';
 export async function POST({ request }) {
 	const { name, subject, content, email } = await request.json();
     const response = await sendEmail(
-        "gabriel.ganeles@gmail.org",
+        "gabriel.ganeles@gmail.com",
         name + ": " + subject,
         content+"\n"+email,
     );

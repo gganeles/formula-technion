@@ -45,7 +45,7 @@ export async function sendEmail(to, subject, body) {
       console.error(
         `Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
       );
-      return false
+      return response
     }
     return response
   }
