@@ -20,8 +20,8 @@
 			}
 		});
         const data = await response.json()
-        console.log(typeof {data})
-        errorText = typeof data == "object"?Object.entries(data):data
+        console.log(data)
+        errorText = typeof data == "object"?JSON.stringify(data):data
         if (data) {
             email = "";
             subject = "";
