@@ -20,7 +20,7 @@
 			}
 		});
         const data = await response.json()
-        console.log(data)
+        console.log(r)
         if (data.success) {
             email = "";
             subject = "";
@@ -28,7 +28,7 @@
             name = "";
             alert("Message sent successfully!");
         } else {
-            errorText = response;
+            errorText = Object.entries(response);
         }
     };
 </script>
