@@ -308,27 +308,27 @@
     const cheifs = [
         {
             name: "Roi Baruch",
-            role: "Aerodynamics Cheif Engineer",
+            role: "Aerodynamics Chief Engineer",
             picture_url: default_url,
         },
         {
             name: "Charlie Shrem",
-            role: "Electrical Cheif Engineer",
+            role: "Electrical Chief Engineer",
             picture_url: default_url,
         },
         {
             name: "Masaad Ayoub",
-            role: "Mechanical Cheif Engineer",
+            role: "Mechanical Chief Engineer",
             picture_url: teamDir+"IMG_7578.JPG",
         },
         {
             name: "Bracha Silverman",
-            role: "Electronics Cheif Engineer",
+            role: "Electronics Chief Engineer",
             picture_url: teamDir + "IMG_7585.JPG",
         },
         {
             name: "Ilia Fridburg",
-            role: "Control Cheif Engineer",
+            role: "Control Chief Engineer",
             picture_url: default_url,
         },
         {
