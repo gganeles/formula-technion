@@ -20,6 +20,7 @@
 			}
 		});
         const data = await response.json()
+        errorText = typeof data == "string"|typeof data == "boolean"?"error":Object.entries(data)
         if (data) {
             email = "";
             subject = "";
