@@ -22,7 +22,7 @@
         const data = await response.json()
         console.log(data)
         errorText = typeof data == "object"?JSON.stringify(data):data
-        if (data) {
+        if (data === true) {
             email = "";
             subject = "";
             content = "";

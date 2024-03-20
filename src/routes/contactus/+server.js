@@ -1,5 +1,5 @@
 import { sendEmail } from "$lib/email";
-import { json }from '@sveltejs/kit';
+import { json, text } from '@sveltejs/kit';
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
@@ -9,5 +9,8 @@ export async function POST({ request }) {
         name + ": " + subject,
         content+"\n"+email,
     );
-	return json(response);
+    
+    const data = await response.text()
+    console.log(data)
+	return json(data);
 }
