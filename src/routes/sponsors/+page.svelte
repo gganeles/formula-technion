@@ -20,11 +20,7 @@
         {
             name: "Grand Technion Energy Program",
             url: sponsorsDir + "grand-technion-energy-program-1_orig.png",
-        },
-        {
-            name: "Mobileye",
-            url: sponsorsDir + "mobileye-logo_orig.png",
-        },
+        }
     ];
     const bronze = [
         {
