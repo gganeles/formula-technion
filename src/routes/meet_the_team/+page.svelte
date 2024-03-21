@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import FormulaLeader from "./FormulaLeader.svelte";
     import Team from "./Team.svelte";
     import Saos from "saos";
@@ -351,30 +352,43 @@
         },
     ];
 
+    let yTop = 0;
+    let box;
+    function parseScroll() {
+        yTop = box.scrollTop;
+    }
+
+    onMount(() => parseScroll());
+
     // A reactive statement that calculates blur value based on scroll position
-    $: blurValue = Math.min(y / 30, 20); // Adjust the division to control the rate of blurring. Cap at 4px of blur.
+    $: blurValue = Math.min(yTop / 30, 20);
 </script>
 
-<svelte:window bind:scrollY={y} />
 <svelte:head>
     <title>Meet the Team!</title>
     <meta name="the team page" content="list of team members" />
 </svelte:head>
 
-<div class="relative flex flex-col items-center justify-center">
+<div
+    class="relative flex flex-col items-center scroll-snap snap-y h-screen snap-mandatory overflow-y-scroll"
+    bind:this={box}
+    on:scroll={parseScroll}
+>
     <div
-        class="fixed blur top-0 w-screen h-screen bg-image"
+        class="fixed blur top-0 w-[calc(100vw-5px)] h-screen bg-image"
         style="--blur:{blurValue}px"
     ></div>
-    <div class="text-3xl flex flex-col items-center drop-shadow-xl mt-96 mb-60">
+    <div
+        class="snap-center text-3xl flex flex-col items-center drop-shadow-xl pt-96 pb-60 w-full"
+    >
         <div class="text-8xl max-md:text-5xl">Meet the Team</div>
         <div>that made it all possible</div>
     </div>
     <div class="z-1 flex flex-row justify-center">
-        <div class="snap-y snap-mandatory flex flex-col pt-2 px-4 pb-20 max-md:px-0 w-custom">
-            <div class="snap-normal flex flex-col pb-16">
+        <div class="flex flex-col pt-2 px-4 pb-20 max-md:px-0 w-custom">
+            <div class="snap-center flex flex-col pb-16">
                 <h1 class="text-6xl py-8 mb-8">Management and Operations</h1>
-                <div class="flex flex-row justify-evenly mb-10">
+                <div class="flex flex-row justify-evenly mb-1">
                     <FormulaLeader
                         name={"Ali Hazboun"}
                         role={"Team Leader"}
@@ -396,12 +410,12 @@
                     {/each}
                 </div>
             </div>
-            <div class="snap-normal">
+            <div class="">
                 {#each teamList as team}
-                    <div >
+                    <div class="snap-center">
                         <Saos
                             animation={"slide-in-top-blurred .8s cubic-bezier(.21,.91,.58,.99) both"}
-                            top={420}
+                            top={300}
                             animation_out="slide-out-top-blurred .5s cubic-bezier(.45,0,.88,.33) both"
                         >
                             <div class="flex flex-col items-center w-full">

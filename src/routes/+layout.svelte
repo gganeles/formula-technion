@@ -20,7 +20,7 @@
 	let navbar_colored;
 	let smallScreen;
 	$: smallScreen = w < 1100 ? true : false;
-	$: navbar_colored = smallScreen | (y > 1) ? true : false;
+	$: navbar_colored = smallScreen | $page.route.id == "/meet_the_team" | (y > 1) ? true : false;
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -115,7 +115,7 @@
 	<main class="h-full text-white z-1">
 		<slot />
 	</main>
-	{#if $page.route.id != "/cars"}
+	{#if $page.route.id != "/cars" && $page.route.id != "/meet_the_team"}
 		<footer
 			class="z-10 text-white text-lg flex flex-col items-center bg-darkgrey py-10"
 		>
