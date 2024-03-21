@@ -1,4 +1,5 @@
 <script>
+    import {sendEmail} from "$lib/email.js"
     let email = "";
     let subject = "";
     let content = "";
@@ -16,7 +17,7 @@
             name + ": " + subject,
             content + "\n" + email,
         );
-        const data = await response.json();
+        const data = await response.text();
         console.log(data);
         errorText = typeof data == "object" ? JSON.stringify(data) : data;
         if (data === true) {
