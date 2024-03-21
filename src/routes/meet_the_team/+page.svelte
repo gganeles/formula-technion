@@ -386,8 +386,8 @@
     </div>
     <div class="z-1 flex flex-row justify-center">
         <div class="flex flex-col pt-2 px-4 pb-20 max-md:px-1 w-custom">
-            <div class="snap-center flex flex-col pb-2">
-                <h1 class="text-6xl max-md:text-5xl pt-8 pb-4">Management and Operations</h1>
+            <div class="snap-center flex flex-col pb-2 md:w-[800px] mx-auto md:pt-8">
+                <h1 class="text-5xl pt-8 pb-4">Management and Operations</h1>
                 <div class="flex flex-row justify-evenly mb-1">
                     <FormulaLeader
                         name={"Ali Hazboun"}
