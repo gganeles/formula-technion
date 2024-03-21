@@ -40,19 +40,21 @@ export const actions = {
         });
 
         const response = await fetch(email_request);
-        if (response.status < 400) {
-            const data = response.text()
-            return { success: true, response:data }
-        } else {
-            let error;
-            try {
+        let error;
+        try {
+            if (response.status < 400) {
+                const data = response.json()
+                return { success: true, response: data }
+            } else {
                 const response_error = await response.text()
                 if (typeof response_error == "string") error = response_error
                 else error = await response_error.error().text()
-            } catch (err) {
-                error = err.toString()
             }
-            return { failed: true, errorText: error??"extra weird Error"}
+        } catch (err) {
+            error = err.toString()
+
         }
+        return { failed: true, errorText: error ?? "extra weird Error" }
     }
+
 }; 
