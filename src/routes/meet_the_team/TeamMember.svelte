@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="team-member m-1 lg:m-2"
+  class="team-member m-1 lg:m-2 flex flex-col items-center"
 >
   <div class='w-36 h-36 max-md:w-24 max-md:h-24 overflow-hidden'>
     <Image
