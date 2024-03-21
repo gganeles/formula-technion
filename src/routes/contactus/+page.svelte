@@ -1,5 +1,4 @@
 <script>
-
     let email = "";
     let subject = "";
     let content = "";
@@ -12,16 +11,14 @@
             errorText = "Please fill in all the required boxes.";
             return;
         }
-        const response = await fetch('/contactus', {
-			method: 'POST',
-			body: JSON.stringify({ name, subject, content, email }),
-			headers: {
-				'content-type': 'application/json'
-			}
-		});
-        const data = await response.json()
-        console.log(data)
-        errorText = typeof data == "object"?JSON.stringify(data):data
+        const response = await sendEmail(
+            "gabriel.ganeles@gmail.com",
+            name + ": " + subject,
+            content + "\n" + email,
+        );
+        const data = await response.json();
+        console.log(data);
+        errorText = typeof data == "object" ? JSON.stringify(data) : data;
         if (data === true) {
             email = "";
             subject = "";
