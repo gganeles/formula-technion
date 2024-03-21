@@ -64,6 +64,7 @@
                     </div>
                     {#if form?.success}
                         <div>Email Sent Successfully!</div>
+                        <div>{form?.response}</div>
                     {:else if form?.missing}
                         <div class="text-red-500">
                             Please fill in all of the boxes

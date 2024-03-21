@@ -22,30 +22,31 @@ export const actions = {
             body: JSON.stringify({
                 personalizations: [
                     {
-                        to: [{ email: "gabriel.ganeles@gmail.com" }]
+                        to: [{ name:"Gabriel Ganeles",email: "gabriel.ganeles@gmail.com" }]
                     }
                 ],
                 from: {
-                    email: fromEmailAddress,
-                    name: fromEmailName
+                    email: "formula@formulatechnion.com",
+                    name: 
                 },
-                subject: name + ": " + subj,
+                subject: "dfasdd",
                 content: [
                     {
                         type: "text/plain",
-                        value: content + "\n" + email
+                        value: "ddasfdas"
                     }
                 ]
             })
         });
 
         const response = await fetch(email_request);
-        let error;
+        
         try {
-            return  { success: true, response: await response.json() }
+            const data =  await response.json()
+            return  { success: true, response: data}
         }
         catch (err) {
-            return {failed:true, errorText:err}
+            return { failed:true, errorText:err }
         }
         try {
             if (response.status < 400) {
