@@ -41,7 +41,8 @@ export const actions = {
 
         const response = await fetch(email_request);
         if (response.status < 400) {
-            return { success: true, response:response }
+            const data = response.text()
+            return { success: true, response:data }
         } else {
             let error;
             try {
