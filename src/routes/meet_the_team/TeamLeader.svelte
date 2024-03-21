@@ -6,10 +6,11 @@
 
     import Image from "$lib/Image.svelte"
 
+    const hoverClass="hover:z-10 hover:scale-[1.5] transition-all hover:bg-black hover:bg-opacity-80 p-2 hover:rounded-xl"
 </script>
 
 <div
-    class="team-leader hover:z-10 hover:scale-[1.5] transition-all hover:bg-black hover:bg-opacity-80 p-2 hover:rounded-xl"
+    class="team-leader m-1 lg:m-2"
 >
     <div class='w-[250px] h-[250px] max-md:w-[166.7px] max-md:h-[166.7px] overflow-hidden'>
         <Image
@@ -19,7 +20,7 @@
             style="object-position:75% 70%;"
         />
     </div>
-    <h3 class="text-xl text-center">{name}</h3>
-    <p class='text-center'>{role}</p>
+    <h3 class="text-xl text-center pt-2.5">{name}</h3>
+    <p class='text-center pb-.5'>{role}</p>
 </div>
 

@@ -82,29 +82,32 @@
 					/>
 				</div>
 				<button class="" on:click={() => (toggle = !toggle)}>
-					<HamburgerIcon width={60}/>
+					<HamburgerIcon width={60} />
 				</button>
 			</div>
 			{#if toggle}
 				<div class="flex flex-col w-full bg-formula">
-
 					{#each navbar_items as nav}
-						<div transition:slide|global={{duration:smallScreen?300:0}}>
-						<NavEl
-							text={nav.text}
-							href={nav.href}
-							bind:scrolled={navbar_colored}
-							{smallScreen}
-						/>
-					</div>
+						<div
+							transition:slide|global={{
+								duration: smallScreen ? 300 : 0,
+							}}
+						>
+							<NavEl
+								text={nav.text}
+								href={nav.href}
+								bind:scrolled={navbar_colored}
+								{smallScreen}
+							/>
+						</div>
 					{/each}
 					<button
-					transition:slide|global
-					class="p-8 text-left w-full bg-yellow-500"
-					on:click={() => (window.location = "/contactus")}
-				>
-					CONTACT US
-				</button>
+						transition:slide|global
+						class="p-8 text-left w-full bg-yellow-500"
+						on:click={() => (window.location = "/contactus")}
+					>
+						CONTACT US
+					</button>
 				</div>
 			{/if}
 		{/if}
@@ -116,9 +119,7 @@
 		<footer
 			class="z-10 text-white text-lg flex flex-col items-center bg-darkgrey py-10"
 		>
-			<div class="pb-8">
-				Get in touch with us via social media:
-			</div>
+			<div class="pb-8">Get in touch with us via social media:</div>
 			<div class="flex flex-row p-4 w-full justify-evenly">
 				<a href="mailto:formula@technion.ac.il">
 					<img src="/email.png" alt="email" class="w-14 h-14" />

@@ -2,12 +2,19 @@
     import FormulaLeader from "./FormulaLeader.svelte";
     import Team from "./Team.svelte";
     import Saos from "saos";
-    import { fly } from "svelte/transition";
+    const pictures = import.meta.glob(
+        "/images/meet_the_team/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}",
+        {
+            query: {
+                enhanced: true,
+            },
+        },
+    );
     let y = 0; // This will hold the scroll position
 
     const default_url = "/images/formula.png";
 
-    const teamDir = "/images/meet_the_team/";
+    const teamDir = "/images/meet_the_team/lowerRes/";
     let teamList = [
         {
             title: "Aerodynamics",
@@ -305,8 +312,8 @@
                 {
                     name: "Gabriel Ganeles",
                     role: "Website Design",
-                    picture_url: teamDir + "GabeGaneles.webp"
-                }
+                    picture_url: teamDir + "GabeGaneles.webp",
+                },
             ],
         },
     ];
@@ -364,8 +371,8 @@
         <div>that made it all possible</div>
     </div>
     <div class="z-1 flex flex-row justify-center">
-        <div class="flex flex-col pt-2 px-4 pb-20 max-md:px-0 w-custom">
-            <div class="flex flex-col pb-16">
+        <div class="snap-y snap-mandatory flex flex-col pt-2 px-4 pb-20 max-md:px-0 w-custom">
+            <div class="snap-normal flex flex-col pb-16">
                 <h1 class="text-6xl py-8 mb-8">Management and Operations</h1>
                 <div class="flex flex-row justify-evenly mb-10">
                     <FormulaLeader
@@ -389,17 +396,27 @@
                     {/each}
                 </div>
             </div>
-            {#each teamList as team}
-                    <div class="flex flex-col items-center w-full">
-                        <h1 class="p-12 text-4xl">
-                            {team.title}
-                        </h1>
-                        <Team
-                            teamLeaders={team.teamLeaders}
-                            teamMembers={team.teamMembers}
-                        />
+            <div class="snap-normal">
+                {#each teamList as team}
+                    <div >
+                        <Saos
+                            animation={"slide-in-top-blurred .8s cubic-bezier(.21,.91,.58,.99) both"}
+                            top={420}
+                            animation_out="slide-out-top-blurred .5s cubic-bezier(.45,0,.88,.33) both"
+                        >
+                            <div class="flex flex-col items-center w-full">
+                                <h1 class="p-12 text-4xl">
+                                    {team.title}
+                                </h1>
+                                <Team
+                                    teamLeaders={team.teamLeaders}
+                                    teamMembers={team.teamMembers}
+                                />
+                            </div>
+                        </Saos>
                     </div>
-            {/each}
+                {/each}
+            </div>
         </div>
     </div>
 </div>
@@ -426,28 +443,27 @@
     @keyframes -global-slide-in-top-blurred {
         0% {
             transform: translateY(-500px);
-            filter:blur(10px);
+            filter: blur(10px);
             opacity: 0;
         }
         100% {
             transform: translateY(0);
-            filter:blur(0px);
+            filter: blur(0px);
             opacity: 1;
         }
     }
 
     @keyframes -global-slide-out-top-blurred {
-        0% {           
-             transform: translateY(0px);
+        0% {
+            transform: translateY(0px);
 
-            filter:blur(0px);
+            filter: blur(0px);
             opacity: 1;
         }
         100% {
             transform: translateY(-500px);
-            filter:blur(100px);
+            filter: blur(100px);
             opacity: 0;
         }
-   
     }
 </style>

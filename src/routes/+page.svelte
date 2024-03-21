@@ -1,6 +1,9 @@
 <script>
 	const img_src = "/images/IMG_7751.png";
+	import {goto} from "$app/navigation"
 	let h;
+
+	
 </script>
 
 <svelte:head>
@@ -16,6 +19,9 @@
 		<div class="text-slate-400 md:text-4xl">
 			Building Israel's Automotive Future
 		</div>
+		<button class="pt-2" on:click={()=>{goto('/competition')}}>
+			Learn More
+		</button>
 	</div>
 </div>
 <section class="main text-xl p-8">

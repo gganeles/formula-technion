@@ -5,10 +5,13 @@
   export let name;
   export let picture_url;
   export let role;
+
+
+  const hover = "hover:z-10 hover:scale-[1.5] transition-all hover:bg-black hover:bg-opacity-80 hover:rounded-xl"
 </script>
 
 <div
-  class="team-member m-2 md:m-2 hover:z-10 hover:scale-[1.5] transition-all hover:bg-black hover:bg-opacity-80 hover:p-2 hover:rounded-xl"
+  class="team-member m-1 lg:m-2"
 >
   <div class='w-36 h-36 max-md:w-24 max-md:h-24 overflow-hidden'>
     <Image
@@ -19,7 +22,7 @@
       alt={name}
     />
   </div>
-  <h4 class="text-sm max-md:text-xs text-center">{name}</h4>
+  <h4 class="text-sm max-md:text-xs text-center pt-2.5">{name}</h4>
   {#if role}
     <p class="text-xs text-center">{role}</p>
   {/if}
