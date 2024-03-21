@@ -43,8 +43,9 @@ export const actions = {
         let error;
         try {
             if (response.status < 400) {
+                
                 const data = await response.text()
-                return { success: true, response: data }
+                return { success: true, response: response ?? "what is the error" }
             } else {
                 const response_error = await response.text()
                 if (typeof response_error == "string") error = response_error
