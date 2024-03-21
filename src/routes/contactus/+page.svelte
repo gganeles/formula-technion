@@ -1,33 +1,6 @@
 <script>
-    import {sendEmail} from "$lib/email.js"
-    let email = "";
-    let subject = "";
-    let content = "";
-    let name = "";
-
-    let errorText = "";
-
-    const handleClick = async () => {
-        if (!email | !subject | !content | !name) {
-            errorText = "Please fill in all the required boxes.";
-            return;
-        }
-        const response = await sendEmail(
-            "gabriel.ganeles@gmail.com",
-            name + ": " + subject,
-            content + "\n" + email,
-        );
-        const data = await response.text();
-        console.log(data);
-        errorText = typeof data == "object" ? JSON.stringify(data) : data;
-        if (data === true) {
-            email = "";
-            subject = "";
-            content = "";
-            name = "";
-            alert("Message sent successfully!");
-        }
-    };
+    /** @type {import('./$types').ActionData} */
+    export let form;
 </script>
 
 <svelte:head>
@@ -86,28 +59,36 @@
                         Fill in your details and we will get back to you within
                         1-2 business days.
                     </div>
-                    <div class="text-red-500">
-                        {errorText}
-                    </div>
+                    {#if form?.success}
+                        <div >Email Sent Successfully!</div>
+                    {:else if form?.missing}
+                        <div class="text-red-500">Please fill in all of the boxes</div>
+                    {:else if form?.failed}
+                        <div class="text-red-500">{form?.errorText}</div>
+                    {/if}
                 </div>
-                <form class="text-black flex flex-col gap-5 p-4 flex-1">
+                <form
+                    method="POST"
+                    class="text-black flex flex-col gap-5 p-4 flex-1"
+                    data-static-form-name="contact"
+                >
                     <input
-                        bind:value={name}
+                        name="name"
                         placeholder="Name"
                         class="p-2 rounded-md"
                     />
                     <input
-                        bind:value={email}
+                        name="email"
                         placeholder="Email or Phone#"
                         class="p-2 rounded-md"
                     />
                     <input
-                        bind:value={subject}
+                        name="subject"
                         placeholder="Subject"
                         class="p-2 rounded-md"
                     />
                     <textarea
-                        bind:value={content}
+                        name="content"
                         placeholder="Message Content"
                         rows="7"
                         style="resize: none;"
@@ -115,7 +96,7 @@
                     />
                     <button
                         class="bg-yellow-500 py-1 px-3 rounded-full text-white"
-                        on:click={handleClick}
+                        type="Submit"
                     >
                         Submit
                     </button>
