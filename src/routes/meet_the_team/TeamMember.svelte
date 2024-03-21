@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="team-member m-1 lg:m-2 flex flex-col items-center"
+  class="team-member m-1 lg:m-2 flex flex-col items-center w-38 max-md:w-24"
 >
   <div class='w-36 h-36 max-md:w-24 max-md:h-24 overflow-hidden'>
     <Image
@@ -24,6 +24,6 @@
   </div>
   <h4 class="text-sm max-md:text-xs text-center pt-2.5">{name}</h4>
   {#if role}
-    <p class="text-xs text-center">{role}</p>
+    <p class="text-xs text-center text-wrap">{role}</p>
   {/if}
 </div>
