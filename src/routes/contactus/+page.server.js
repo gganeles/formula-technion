@@ -40,11 +40,12 @@ export const actions = {
         });
 
         const response = await fetch(email_request);
-        let error;
+       // let error;
+        return  { success: true, response: await response.json() }
         try {
             if (response.status < 400) {
-                
-                const data = await response.text()
+
+                const data = {blob:await response.blob(), }
                 return { success: true, response: response ?? "what is the error" }
             } else {
                 const response_error = await response.text()
