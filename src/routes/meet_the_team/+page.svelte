@@ -414,9 +414,9 @@
                 {#each teamList as team}
                     <div class="snap-center">
                         <Saos
-                            animation={"slide-in-top-blurred .8s cubic-bezier(.21,.91,.58,.99) both"}
+                            animation={"slide-in-top-blurred .4s cubic-bezier(.21,.91,.58,.99) both"}
                             top={300}
-                            animation_out="slide-out-top-blurred .5s cubic-bezier(.45,0,.88,.33) both"
+                            animation_out="slide-out-top-blurred .2s cubic-bezier(.45,0,.88,.33) both"
                         >
                             <div class="flex flex-col items-center w-full">
                                 <h1 class="p-12 text-4xl">
@@ -456,7 +456,7 @@
 
     @keyframes -global-slide-in-top-blurred {
         0% {
-            transform: translateY(-500px);
+            transform: translateY(-200px);
             filter: blur(10px);
             opacity: 0;
         }
@@ -469,14 +469,11 @@
 
     @keyframes -global-slide-out-top-blurred {
         0% {
-            transform: translateY(0px);
-
             filter: blur(0px);
             opacity: 1;
         }
         100% {
-            transform: translateY(-500px);
-            filter: blur(100px);
+            filter: blur(10px);
             opacity: 0;
         }
     }
