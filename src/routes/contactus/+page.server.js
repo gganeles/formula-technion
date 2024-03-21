@@ -1,5 +1,5 @@
 import { fail } from "@sveltejs/kit"
-import { fromEmailAddress, fromEmailName } from "$lib/constants";
+import { fromEmailAddress, fromEmailName } from "$lib/constants.js";
 
 /** @type {import('./$types').Actions} */
 export const actions = {
