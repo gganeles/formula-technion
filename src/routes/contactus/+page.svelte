@@ -1,4 +1,6 @@
 <script>
+    import { enhance } from "$app/forms";
+
     /** @type {import('./$types').ActionData} */
     export let form;
 </script>
@@ -60,9 +62,11 @@
                         1-2 business days.
                     </div>
                     {#if form?.success}
-                        <div >Email Sent Successfully!</div>
+                        <div>Email Sent Successfully!</div>
                     {:else if form?.missing}
-                        <div class="text-red-500">Please fill in all of the boxes</div>
+                        <div class="text-red-500">
+                            Please fill in all of the boxes
+                        </div>
                     {:else if form?.failed}
                         <div class="text-red-500">{form?.errorText}</div>
                     {/if}
@@ -70,7 +74,7 @@
                 <form
                     method="POST"
                     class="text-black flex flex-col gap-5 p-4 flex-1"
-                    data-static-form-name="contact"
+                    use:enhance
                 >
                     <input
                         name="name"

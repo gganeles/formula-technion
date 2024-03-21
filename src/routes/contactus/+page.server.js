@@ -1,3 +1,4 @@
+import mailChannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
 import { fail } from "@sveltejs/kit"
 import { fromEmailAddress, fromEmailName } from "$lib/constants";
 
@@ -43,8 +44,15 @@ export const actions = {
         if (response.status < 400) {
             return { success: true }
         } else {
-            const error = await response.text()
-            return { failed: true, errorText: error}
+            let error;
+            try {
+                const response_error = await response.text()
+                if (typeof response_error == "string") error = response_error
+                else error = await response_error.error().text()
+            } catch (err) {
+                error = err.toString()
+            }
+            return { failed: true, errorText: error??"extra weird Error"}
         }
     }
 }; 
