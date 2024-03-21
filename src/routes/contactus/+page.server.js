@@ -43,7 +43,7 @@ export const actions = {
         let error;
         try {
             if (response.status < 400) {
-                const data = response.json()
+                const data = response.error()
                 return { success: true, response: data }
             } else {
                 const response_error = await response.text()
