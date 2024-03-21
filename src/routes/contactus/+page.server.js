@@ -1,4 +1,3 @@
-import mailChannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
 import { fail } from "@sveltejs/kit"
 import { fromEmailAddress, fromEmailName } from "$lib/constants";
 
