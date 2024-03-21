@@ -419,7 +419,7 @@
                             animation_out="slide-out-top-blurred .2s cubic-bezier(.45,0,.88,.33) both"
                         >
                             <div class="flex flex-col items-center w-full">
-                                <h1 class="p-12 text-4xl">
+                                <h1 class="pt-12 pb-2 text-4xl">
                                     {team.title}
                                 </h1>
                                 <Team
