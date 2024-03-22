@@ -27,7 +27,7 @@ export const actions = {
                 ],
                 from: {
                     email: "formula@formulatechnion.com",
-                    name: 
+                    name: "formula"
                 },
                 subject: "dfasdd",
                 content: [
@@ -39,11 +39,11 @@ export const actions = {
             })
         });
 
-        const response = await fetch(email_request);
+        const response = await fetch(email_request); // Response object {}
         
         try {
             const data =  await response.json()
-            return  { success: true, response: data}
+            return  { success: true, response: data }
         }
         catch (err) {
             return { failed:true, errorText:err }
