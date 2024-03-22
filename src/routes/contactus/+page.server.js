@@ -22,7 +22,7 @@ export const actions = {
             body: JSON.stringify({
                 personalizations: [
                     {
-                        to: [{ name:"Gabriel Ganeles",email: "gabriel.ganeles@gmail.com" }]
+                        to: [{ name:"Gabriel Ganeles",email: "harelaloni1@gmail.com" }]
                     }
                 ],
                 from: {
