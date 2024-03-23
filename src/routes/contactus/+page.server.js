@@ -1,5 +1,10 @@
 import { fail } from "@sveltejs/kit"
 import { fromEmailAddress, fromEmailName } from "$lib/constants.js";
+import mailChannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
+
+
+
+
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -14,55 +19,37 @@ export const actions = {
             return fail(400, { missing: true })
         }
 
-        const email_request = new Request("https://api.mailchannels.net/tx/v1/send", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify({
+        
+        try {
+            await mailChannelsPlugin({
                 personalizations: [
-                    {
-                        to: [{ name:"Gabriel Ganeles",email: "harelaloni1@gmail.com" }]
-                    }
+                  {
+                    to: [{ name: "Some User", email: "gabriel.ganeles@gmail.com" }],
+                  },
                 ],
                 from: {
-                    email: "formula@formulatechnion.com",
-                    name: "formula"
+                  name: "formula",
+                  // The domain of your `from` address must be the same as the domain you set up MailChannels Domain Lockdown for (detailed below)
+                  email: "formula@formulatechnion.com",
                 },
-                subject: "dfasdd",
-                content: [
+                subject:"subj",
+                content:[
                     {
                         type: "text/plain",
                         value: "ddasfdas"
                     }
-                ]
-            })
-        });
-
-        const response = await fetch(email_request); // Response object {}
-        
-        try {
-            const data =  await response.json()
-            return  { success: true, response: data }
+                ],
+                respondWith: () => {
+                  return new Response(
+                    `Thank you for submitting your enquiry. A member of the team will be in touch shortly.`
+                  );
+                },
+              });
+            return  { success: true, response: "" }
         }
         catch (err) {
             return { failed:true, errorText:err }
         }
-        try {
-            if (response.status < 400) {
-
-                const data = {blob:await response.blob(), }
-                return { success: true, response: response ?? "what is the error" }
-            } else {
-                const response_error = await response.text()
-                if (typeof response_error == "string") error = response_error
-                else error = await response_error.error().text()
-            }
-        } catch (err) {
-            error = err.toString()
-
-        }
-        return { failed: true, errorText: error ?? "extra weird Error" }
     }
 
 }; 

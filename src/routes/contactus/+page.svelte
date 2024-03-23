@@ -3,7 +3,6 @@
 
     /** @type {import('./$types').ActionData} */
     export let form;
-    console.log(form?.response)
 </script>
 
 <svelte:head>
