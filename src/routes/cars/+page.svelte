@@ -1,9 +1,8 @@
 <script>
     import Car from "./Car.svelte";
-    import Carousel from "svelte-carousel";
-    import Chevrondoubleleft from "./Chevrondoubleleft.svelte"
-    import Chevrondoubleright from "./Chevrondoubleright.svelte"
-
+    import Chevrondoubleleft from "./Chevrondoubleleft.svelte";
+    import Chevrondoubleright from "./Chevrondoubleright.svelte";
+    import { onMount } from "svelte";
     const default_src = "";
     const carDir = "/images/cars/";
     const cars = [
@@ -80,7 +79,7 @@
                 "Active Suspension System",
                 "Pnuematic Transmission System",
             ],
-            img_src: carDir+"ft17.jpg",
+            img_src: carDir + "ft17.jpg",
         },
         {
             title: "FT2016",
@@ -97,7 +96,7 @@
                 "Adjustible Anti-roll bar",
                 "Custom Carbon-Fibre Seat",
             ],
-            img_src: carDir+"ft16.png",
+            img_src: carDir + "ft16.png",
         },
         {
             title: "FT2015",
@@ -114,7 +113,7 @@
                 "Drexler Limited Slip Differentiall",
                 "Custom Carbon-Fibre Seat",
             ],
-            img_src: carDir+"ft15.jpg",
+            img_src: carDir + "ft15.jpg",
         },
         {
             title: "FT2014",
@@ -126,7 +125,7 @@
                 Engine: "Suzuki GSX-R600 4-Cylinder",
             },
             features: [],
-            img_src: carDir+"ft14.jpg",
+            img_src: carDir + "ft14.jpg",
         },
         {
             title: "FT2013",
@@ -138,60 +137,94 @@
                 Engine: "Suzuki GSX-R600 4-Cylinder",
             },
             features: [],
-            img_src: carDir+"ft13.jpg",
+            img_src: carDir + "ft13.jpg",
         },
     ];
-    let carousel;
-    let currentPageIndex = 0;
+    //let carousel;
+    let scroller;
+    let scrollWidth;
+    let x;
+    function navto(index) {
+        const screen_size = scrollWidth / cars.length;
+        scroller.scroll({ left: index * screen_size, behavior: "smooth" });
+    }
+    function parseScroll() {
+        x = scroller.scrollLeft;
+        scrollWidth = scroller.scrollWidth;
+    }
+    onMount(() => parseScroll());
 </script>
 
 <svelte:head>
-	<title>Cars</title>
+    <title>Cars</title>
 </svelte:head>
-
-<div class="h-screen relative">
-    <Carousel bind:this={carousel} on:pageChange={e=>currentPageIndex=e.detail}>
+<div class="h-screen w-screen relative flex justify-center">
+    <div
+        class="overflow-x-scroll overflow-y-hidden overflow-scroll flex flex-row scroll-snap snap-x snap-mandatory hidescroll"
+        bind:this={scroller}
+        on:scroll={parseScroll}
+    >
         {#each cars as car}
-            <Car data={car} />
+            <div class="snap-center">
+                <Car data={car} />
+            </div>
         {/each}
+    </div>
+    <div
+        class="z-10 absolute opacity-50 bottom-3.5 custom-dots z-20 flex flex-row opacity-70 gap-0.5 items-center rounded-full overflow-hidden"
+    >
         <div
-            slot="next"
-            class="custom-arrow custom-arrow-next flex items-center justify-center absolute h-screen right-0"
+            class="bg-white w-8 h-2 scrollbar absolute"
+            style="--scrolled:{(272 * 8 * x) / (scrollWidth * cars.length)}px"
+        ></div>
+        {#each [...Array(cars.length).keys()] as index}
+            <div
+                class="bg-black hover:cursor-pointer"
+                on:click={() => {
+                    navto(index);
+                }}
+            >
+                <div class="w-8 h-2"></div>
+            </div>
+        {/each}
+    </div>
+    <div
+        class="custom-arrow custom-arrow-next flex items-center justify-center absolute h-screen right-0"
+        on:click={()=>{
+            const ind = x+scrollWidth/cars.length > scrollWidth-10 ? 0 : x*cars.length/scrollWidth + 1
+            navto(ind)
+        }}
         >
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <i class="hover:cursor-pointer p-0" on:click={carousel.goToNext()}>
-                <Chevrondoubleright/>
-            </i>
-        </div>
-        <div
-            slot="prev"
-            class="custom-arrow custom-arrow-prev h-screen flex items-center justify-center absolute left-0 z-10"
+        <i class="hover:cursor-pointer p-0">
+            <Chevrondoubleright />
+        </i>
+    </div>
+    <div
+        class="custom-arrow custom-arrow-prev h-screen flex items-center justify-center absolute left-0 z-10"
+        on:click={()=>{
+            const ind = x<10 ? cars.length-1 : x*cars.length/scrollWidth - 1
+            navto(ind)
+        }}
         >
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <i class="w-fit hover:cursor-pointer p-0" on:click={carousel.goToPrev()}>
-                <Chevrondoubleleft/>
-            </i>
-        </div>
-        <div
-            slot="dots" class='absolute bottom-3.5 h-3 custom-dots z-20 flex flex-row opacity-70 gap-0.5 items-center'
+        <i
+            class="w-fit hover:cursor-pointer p-0"
         >
-            {#each Array(cars.length) as _, pageIndex (pageIndex)}
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <!-- svelte-ignore a11y-no-static-element-interactions -->
-                <div on:click={()=>carousel.goTo(pageIndex)} class='h-2.5 hover:cursor-pointer {currentPageIndex===pageIndex&&"w-custom"} bg-slate-500 first:rounded-l-full last:rounded-r-full w-8'>
-                </div>
-            {/each}
-        </div>
-    </Carousel>
+            <Chevrondoubleleft />
+        </i>
+    </div>
 </div>
 
 <style>
     .w-custom {
         width: 52px;
         height: 10px;
-        transition: all .1s linear;
+        transition: all 0.1s linear;
         background-color: rgb(182, 222, 235);
+    }
+    .scrollbar {
+        transform: translateX(var(--scrolled));
+    }
+    .hidescroll::-webkit-scrollbar {
+        display: none;
     }
 </style>

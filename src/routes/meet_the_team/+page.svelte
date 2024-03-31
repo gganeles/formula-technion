@@ -414,7 +414,7 @@
                 {#each teamList as team}
                     <div class="snap-center">
                         <Saos
-                            animation={"slide-in-top-blurred .4s cubic-bezier(.21,.91,.58,.99) both"}
+                            animation={"slide-in-top-blurred .2s cubic-bezier(.21,.91,.58,.99) both"}
                             top={300}
                             animation_out="slide-out-top-blurred .2s cubic-bezier(.45,0,.88,.33) both"
                         >
@@ -456,7 +456,7 @@
 
     @keyframes -global-slide-in-top-blurred {
         0% {
-            transform: translateY(-200px);
+            transform: translateY(-50px);
             filter: blur(10px);
             opacity: 0;
         }

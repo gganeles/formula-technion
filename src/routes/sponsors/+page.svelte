@@ -119,7 +119,7 @@
     <SponsorGroup
         group={silvers}
         groupName="Silver Sponsors"
-        gridCols={2}
+        gridCols={1}
         textColor={"text-slate-400"}
     />
     <SponsorGroup
