@@ -1,6 +1,5 @@
 import { fail } from "@sveltejs/kit"
-import { fromEmailAddress, fromEmailName } from "$lib/constants.js";
-import mailChannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
+import { ELASKEY } from "$env/static/private";
 
 
 
@@ -19,37 +18,45 @@ export const actions = {
             return fail(400, { missing: true })
         }
 
-        
-        try {
-            await mailChannelsPlugin({
-                personalizations: [
-                  {
-                    to: [{ name: "Some User", email: "gabriel.ganeles@gmail.com" }],
-                  },
-                ],
-                from: {
-                  name: "formula",
-                  // The domain of your `from` address must be the same as the domain you set up MailChannels Domain Lockdown for (detailed below)
-                  email: "formula@formulatechnion.com",
-                },
-                subject:"subj",
-                content:[
-                    {
-                        type: "text/plain",
-                        value: "ddasfdas"
-                    }
-                ],
-                respondWith: () => {
-                  return new Response(
-                    `Thank you for submitting your enquiry. A member of the team will be in touch shortly.`
-                  );
-                },
-              });
-            return  { success: true, response: "" }
-        }
-        catch (err) {
-            return { failed:true, errorText:err }
-        }
-    }
 
-}; 
+        const url = "https://api.elasticemail.com/v4/emails/transactional";
+        const email_request = {
+            "Recipients": 
+              {
+                "To": ["Formula Technion <technionfs@gmail.com>"]
+              }
+            ,
+            "Content": {
+              "Body": [
+                {
+                  "ContentType": "HTML",
+                  "Content": content+"<div style='display:block; padding-top:20px'>Please reply at: "+email+"</div>",
+                  "Charset": "utf-8"
+                }
+              ],
+              "From": "Contact Formula Technion <contactus@formulatechnion.com>",
+              "Subject": name+": "+subj
+            }
+          }
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type":"application/json",
+                "X-ElasticEmail-ApiKey": ELASKEY,
+            },
+            body: JSON.stringify(email_request),
+        })
+        try {
+            if (!response.ok) {
+                return fail(401, { failed: true, errorText: "Unable to send email" })
+            }
+            return { success: true };
+        } catch (err) {
+            console.log(err)
+            return { failed: true, errorText: "Unable to send email" }
+        }
+
+    }
+};
+
+

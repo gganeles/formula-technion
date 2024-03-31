@@ -2,7 +2,10 @@
     import { enhance } from "$app/forms";
 
     /** @type {import('./$types').ActionData} */
-    export let form;
+    export let form
+    $: if (form?.success) {
+        alert("Email sent successfully.")
+    }
 </script>
 
 <svelte:head>
@@ -61,10 +64,7 @@
                         Fill in your details and we will get back to you within
                         1-2 business days.
                     </div>
-                    {#if form?.success}
-                        <div>Email Sent Successfully!</div>
-                        <div>f   {form?.response}</div>
-                    {:else if form?.missing}
+                    {#if form?.missing}
                         <div class="text-red-500">
                             Please fill in all of the boxes
                         </div>
