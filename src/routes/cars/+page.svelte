@@ -165,62 +165,60 @@
         on:scroll={parseScroll}
     >
         {#each cars as car}
-            <div class="snap-center">
+            <div class="snap-center snap-always">
                 <Car data={car} />
             </div>
         {/each}
+    </div>
+    <div class="h-screen flex items-center justify-center absolute left-0 z-10">
+        <button
+            class="w-fit hover:cursor-pointer p-0"
+            on:click={() => {
+                const ind =
+                    x < 10
+                        ? cars.length - 1
+                        : (x * cars.length) / scrollWidth - 1;
+                navto(ind);
+            }}
+        >
+            <Chevrondoubleleft />
+        </button>
+    </div>
+    <div class="flex items-center justify-center absolute h-screen right-0">
+        <button
+            class="hover:cursor-pointer p-0"
+            on:click={() => {
+                const ind =
+                    x + scrollWidth / cars.length > scrollWidth - 10
+                        ? 0
+                        : (x * cars.length) / scrollWidth + 1;
+                navto(ind);
+            }}
+        >
+            <Chevrondoubleright />
+        </button>
     </div>
     <div
         class="z-10 absolute opacity-50 bottom-3.5 custom-dots z-20 flex flex-row opacity-70 gap-0.5 items-center rounded-full overflow-hidden"
     >
         <div
             class="bg-white w-8 h-2 scrollbar absolute"
-            style="--scrolled:{(272 * 8 * x) / (scrollWidth * cars.length)}px"
+            style="--scrolled:{(272 * x) / scrollWidth}px"
         ></div>
         {#each [...Array(cars.length).keys()] as index}
-            <div
-                class="bg-black hover:cursor-pointer"
+            <button
+                class="bg-black"
                 on:click={() => {
                     navto(index);
                 }}
             >
                 <div class="w-8 h-2"></div>
-            </div>
+            </button>
         {/each}
-    </div>
-    <div
-        class="custom-arrow custom-arrow-next flex items-center justify-center absolute h-screen right-0"
-        on:click={()=>{
-            const ind = x+scrollWidth/cars.length > scrollWidth-10 ? 0 : x*cars.length/scrollWidth + 1
-            navto(ind)
-        }}
-        >
-        <i class="hover:cursor-pointer p-0">
-            <Chevrondoubleright />
-        </i>
-    </div>
-    <div
-        class="custom-arrow custom-arrow-prev h-screen flex items-center justify-center absolute left-0 z-10"
-        on:click={()=>{
-            const ind = x<10 ? cars.length-1 : x*cars.length/scrollWidth - 1
-            navto(ind)
-        }}
-        >
-        <i
-            class="w-fit hover:cursor-pointer p-0"
-        >
-            <Chevrondoubleleft />
-        </i>
     </div>
 </div>
 
 <style>
-    .w-custom {
-        width: 52px;
-        height: 10px;
-        transition: all 0.1s linear;
-        background-color: rgb(182, 222, 235);
-    }
     .scrollbar {
         transform: translateX(var(--scrolled));
     }
