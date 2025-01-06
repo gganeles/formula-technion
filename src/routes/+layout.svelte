@@ -20,7 +20,10 @@
 	let navbar_colored;
 	let smallScreen;
 	$: smallScreen = w < 1100 ? true : false;
-	$: navbar_colored = smallScreen | $page.route.id == "/meet_the_team" | (y > 1) ? true : false;
+	$: navbar_colored =
+		smallScreen | ($page.route.id == "/meet_the_team") | (y > 1)
+			? true
+			: false;
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -55,12 +58,22 @@
 					bind:scrolled={navbar_colored}
 				/>
 			{/each}
-			<button
-				class="md:absolute right-8 bg-yellow-500 py-1 px-3 rounded-full"
-				on:click={() => (window.location = "/contactus")}
+			<div
+				class="flex flex-row divide-x-2 md:absolute right-8 bg-yellow-500 py-1 px-3 rounded-full"
 			>
-				CONTACT US
-			</button>
+				<button
+					class="px-2 pt-1"
+					on:click={() => (window.location = "/contactus")}
+				>
+					CONTACT US
+				</button>
+				<button
+					class="px-2 pt-1"
+					on:click={() => (window.location = "/apply")}
+				>
+					APPLY
+				</button>
+			</div>
 		{:else}
 			<div
 				class="flex h-full {smallScreen &&
@@ -101,13 +114,24 @@
 							/>
 						</div>
 					{/each}
-					<button
+					<div
 						transition:slide|global
-						class="p-8 text-left w-full bg-yellow-500"
-						on:click={() => (window.location = "/contactus")}
+						class="flex flex-row divide-x-2 divide-white"
 					>
-						CONTACT US
-					</button>
+						<button
+							class="p-8 text-center w-full bg-yellow-500"
+							on:click={() => (window.location = "/contactus")}
+						>
+							CONTACT US
+						</button>
+						<button
+							transition:slide|global
+							class="p-8 text-center w-full bg-yellow-500"
+							on:click={() => (window.location = "/apply")}
+						>
+							APPLY
+						</button>
+					</div>
 				</div>
 			{/if}
 		{/if}
