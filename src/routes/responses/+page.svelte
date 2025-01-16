@@ -1,9 +1,13 @@
 <script>
   export let data;
+  export let form;
+
+  $: console.log(form?.data);
 </script>
 
 <pp class='p-20'>
   <h1>Responses:</h1>
+  <div>{form?.data}</div>
   <div>
       {#each data.data as item, i}
           <form class="flex flex-row w-full justify-between">
