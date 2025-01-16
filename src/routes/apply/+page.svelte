@@ -1,4 +1,6 @@
 <div class="w-full picture absolute h-full">
+</div>
+<div class="w-full h-full relative">
     <div class="bg-black bg-opacity-30 w-full h-full">
         <div class="pt-20 px-20 max-sm:px-10 flex flex-col w-full items-center">
             <div

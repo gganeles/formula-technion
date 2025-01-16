@@ -28,6 +28,7 @@
 	"dependencies": {
 		"@cloudflare/pages-plugin-mailchannels": "^0.1.3",
 		"dotenv": "^16.4.5",
+		"mongodb": "^6.12.0",
 		"svelte-carousel": "github:vadimkorr/svelte-carousel#pull/142/head"
 	}
 }

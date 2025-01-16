@@ -1,6 +1,6 @@
 import { fail } from "@sveltejs/kit"
-import { ELASKEY } from "$env/static/private";
-
+import { MONGO_URI } from "$env/static/private";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 
 
@@ -8,6 +8,32 @@ import { ELASKEY } from "$env/static/private";
 /** @type {import('./$types').Actions} */
 export const actions = {
     default: async ({ request }) => {
+        async function run() {
+          try {
+            // Connect the client to the server	(optional starting in v4.7)
+            await client.connect();
+            // Send a ping to confirm a successful connection
+            const db = client.db("responses")
+            const col = db.collection("people")
+            const resp = await col.insertOne({
+              id: crypto.randomUUID(),
+              name: name,
+              email: email,
+              subject: subj,
+              content: content
+            })
+            console.log(resp)
+          } catch (err) {
+            console.log(err.stack)
+            return false
+          } finally {
+            // Ensures that the client will close when you finish/error
+            await client.close();
+            return true
+          }
+        }
+
+
         const data = await request.formData();
         const email = data.get("email")
         const name = data.get("name")
@@ -19,43 +45,17 @@ export const actions = {
         }
 
 
-        const url = "https://api.elasticemail.com/v4/emails/transactional";
-        const email_request = {
-            "Recipients": 
-              {
-                "To": ["Formula Technion <technionfs@gmail.com>"]
-              }
-            ,
-            "Content": {
-              "Body": [
-                {
-                  "ContentType": "HTML",
-                  "Content": content+"<div style='display:block; padding-top:20px'>Please reply at: "+email+"</div>",
-                  "Charset": "utf-8"
-                }
-              ],
-              "From": "Contact Formula Technion <contactus@formulatechnion.com>",
-              "Subject": name+": "+subj
-            }
+        const client = new MongoClient(MONGO_URI, {
+          serverApi: {
+            version: ServerApiVersion.v1,
+            strict: true,
+            deprecationErrors: true,
           }
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "content-type":"application/json",
-                "X-ElasticEmail-ApiKey": ELASKEY,
-            },
-            body: JSON.stringify(email_request),
-        })
-        try {
-            if (!response.ok) {
-                return fail(401, { failed: true, errorText: "Unable to send email" })
-            }
-            return { success: true };
-        } catch (err) {
-            console.log(err)
-            return { failed: true, errorText: "Unable to send email" }
-        }
-
+        });
+        
+        const r = run();
+        if (r) return { success: true }
+        else return fail(401, {failed: true, errorText: "Failed to connect to database"})
     }
 };
 

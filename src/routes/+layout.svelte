@@ -19,7 +19,7 @@
 	let toggle = false;
 	let navbar_colored;
 	let smallScreen;
-	$: smallScreen = w < 1100 ? true : false;
+	$: smallScreen = w < 1300 ? true : false;
 	$: navbar_colored =
 		smallScreen | ($page.route.id == "/meet_the_team") | (y > 1)
 			? true

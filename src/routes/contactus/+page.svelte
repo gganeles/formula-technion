@@ -3,9 +3,6 @@
 
     /** @type {import('./$types').ActionData} */
     export let form
-    $: if (form?.success) {
-        alert("Email sent successfully.")
-    }
 </script>
 
 <svelte:head>
@@ -14,7 +11,11 @@
 
 <div class="w-full picture absolute h-full">
     <div class="bg-black bg-opacity-30 w-full h-full">
-        <div class="pt-20 px-20 max-sm:px-10 flex flex-col w-full items-center">
+    </div>
+</div>
+<div class="w-full h-full relative">
+    <div class="w-full h-full">
+        <div class="p-20 px-20 max-sm:px-10 flex flex-col w-full items-center">
             <div
                 class="h-full bg-black flex flex-row max-sm:flex-col bg-opacity-50 rounded-2xl max-w-[48rem]"
             >
@@ -30,6 +31,9 @@
                         </div>
                     {:else if form?.failed}
                         <div class="text-red-500">{form?.errorText}</div>
+                    {/if}
+                    {#if form?.success}
+                        <div class="text-green-500">Email sent successfully.</div>
                     {/if}
                 </div>
                 <form
@@ -72,10 +76,7 @@
 </div>
 
 <style>
-    a {
-        background-color: rgb(234 179 8);
-        padding: 4px 12px;
-    }
+
     .picture {
         background-image: url("/registerCar.webp");
         background-position: center;
