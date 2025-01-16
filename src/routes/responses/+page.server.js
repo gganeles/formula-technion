@@ -25,5 +25,6 @@ export const actions = {
     const r = await fetch(`https://floral-dust-97dd.technionfs.workers.dev/?id=${idValue}`,{
       method: "DELETE"
     })
+    console.log(r)
   }
 }
