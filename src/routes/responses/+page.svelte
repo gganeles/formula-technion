@@ -2,12 +2,10 @@
   export let data;
   export let form;
 
-  $: console.log(form?.data);
 </script>
 
 <pp class='p-20'>
   <h1>Responses:</h1>
-  <div>{form?.data}</div>
   <div>
       {#each data.data as item, i}
           <form class="flex flex-row w-full justify-between">
@@ -25,7 +23,12 @@
                 Message: {item.content}
               </div>
             </div>
-            <button type="submit" formmethod="POST" class="m-2 px-2 bg-red-500 text-white" name="id" value="{item.id}">
+            <input
+                name="id"
+                value={item.id}
+                class="hidden"
+            />
+            <button type="submit" formmethod="POST" class="m-2 px-2 bg-red-500 text-white" >
               delete
             </button>
           </form>

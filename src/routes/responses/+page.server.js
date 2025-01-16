@@ -18,10 +18,7 @@ export async function load() {
 export const actions = {
   default: async ({ request }) => {
     const data = await request.formData()
-    const stateSymbol = Object.getOwnPropertySymbols(data)[0];
-    const stateValue = data[stateSymbol];
-    const idValue = stateValue.find(entry => entry.name === 'id').value;
-
+    const idValue = data.get('id')
     const r = await fetch(`https://floral-dust-97dd.technionfs.workers.dev/?id=${idValue}`,{
       method: "DELETE"
     })
