@@ -42,6 +42,11 @@
     ];
     const contributors = [
         {
+            name:"Easycomposites",
+            url: sponsorsDir + "easy-composites-logo-simple-curves.jpg",
+            href:"https://www.easycomposites.co.uk/"
+        },
+        {
             name: "Kenesto",
             url: sponsorsDir + "kenestologo_orig.png",
         },
