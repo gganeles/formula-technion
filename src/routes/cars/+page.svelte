@@ -7,6 +7,25 @@
     const carDir = "/images/cars/";
     const cars = [
         {
+            title: "Batrice/FT22-23E",
+            description:
+                "Batrice is the first Formula Technion Autonomous combined Electric Vehicle",
+            achievements: [
+                "2nd place in Business event at FSPT",
+            ],
+            specs: {
+                Weight: "260 [Kg]",
+                Power: "81 [Hp]",
+                Motor: "Emrax 228",
+                Accumulator: "450 [V], 180 [A]",
+                Downforce: "1000 [N] at 80 [Km/h]",
+                Drag: "400 [N] at 80 [Km/h]",
+                "Chassis Torsion": "2000 [Nm/deg]",
+                "Center of Mass Height": "300 [mm]",
+            },
+            img_src: carDir + "ft23.jpg",
+        },
+        {
             title: "Abbie/FT21-22E",
             description:
                 "Abbie is the first Formula Technion Electric vehicle. The car competed in Formula Student Spain.",

@@ -390,15 +390,11 @@
                 <h1 class="text-5xl pt-8 pb-4">Management and Operations</h1>
                 <div class="flex flex-row justify-evenly mb-1">
                     <FormulaLeader
-                        name={"Ali Hazboun"}
+                        name={"Jawad Soliman"}
                         role={"Team Leader"}
-                        picture_url={teamDir + "AliHazboun.webp"}
-                    />
-                    <FormulaLeader
-                        name={"Majd Jaraysi"}
-                        role={""}
-                        picture_url={teamDir + "MajdJaraysi.webp"}
-                    />
+                        picture_url={teamDir + "JawadSoliman.webp"}
+                    /> 
+                    
                 </div>
                 <div class="grid grid-cols-3 items-start">
                     {#each cheifs as cheif}
