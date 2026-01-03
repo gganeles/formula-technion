@@ -387,9 +387,9 @@
             title: "Media & Marketing",
             teamLeaders: [
                 {
-                    name: "Hodi Sackstein",
-                    role: "Team Leader",
-                    picture_url: teamDir + "HodiSackstein.webp",
+                    name: "Rama Khier",
+                    role: "Sponsorship & Marketing leader",
+                    picture_url: default_url,
                 },
             ],
             teamMembers: [
@@ -398,11 +398,7 @@
                     role: "Media",
                     picture_url: default_url,
                 },
-                {
-                    name: "Rama Khier",
-                    role: "Sponsorship & Marketing leader",
-                    picture_url: default_url,
-                },
+               
                 {
                     name: "Mohammad Mrissat",
                     role: "Website developer",
