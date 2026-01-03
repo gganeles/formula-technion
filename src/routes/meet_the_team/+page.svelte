@@ -18,47 +18,105 @@
     const teamDir = "/images/meet_the_team/lowerRes/";
     let teamList = [
         {
+            title: "Autonomous",
+            teamLeaders: [
+                {
+                    name: "Bishara Hakim",
+                    role: "Autonomous Team Co-Leader",
+                    picture_url: default_url,
+
+                },
+                {
+                    name: "Gabriel Ganeles",
+                    role: "Autonomous Team Co-Leader",
+                    picture_url: teamDir + "GabeGaneles.webp",
+                }
+            ],
+            teamMembers: [
+                {
+                    name: "Mohammad Mrissat",
+                    role: "Autonomous Framework Integration",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Aleen Nijim",
+                    role: "Autonomous Framework Integration",
+                    picture_url: default_url,
+                },
+                {
+                    name: "noam yair perlman",
+                    role: "Autonomous Framework Integration",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Fady	Mattar",
+                    role: "Perception",
+                    picture_url: default_url,
+                },
+            ],
+        },
+        {
             title: "Aerodynamics",
             teamLeaders: [
                 {
-                    name: "Roi Baruch",
-                    picture_url: default_url, // Replace with actual URL of Roi Baruch's picture if available
+                    name: "Adi Atrash",
+                    picture_url: default_url, // Replace with actual URL of Adi Atrash's picture if available
                     role: "Team Leader",
                 },
             ],
             teamMembers: [
                 {
-                    name: "Yahav Bahalker",
-                    picture_url: teamDir + "YahavBahalker.webp", // Replace with actual URL of Yahav Bahalker's picture if available
+                    name: "Nicolas Galagovsky",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Nicolas Galagovsky's picture if available
+                    role: "Undertray",
                 },
                 {
-                    name: "Daniel Pearson",
-                    picture_url: teamDir + "DanielPearson.webp", // Replace with actual URL of Daniel Pearson's picture if available
+                    name: "Raghad Waked",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Raghad Waked's picture if available
+                    role: "Undertray",
                 },
                 {
-                    name: "Bader Abu Hjoul",
-                    picture_url: teamDir + "BaderAbuHjoul.webp", // Replace with actual URL of Bader Abu Hjoul's picture if available
+                    name: "Abrar Msarwe",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Abrar Msarwe's picture if available
+                    role: "mechanical",
+                },{
+                    name: "Milan Gershkovitch",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Milan Gershkovitch's picture if available
+                    role: "mechanical",
+                },{
+                    name: "Noor Kina'an",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Noor Kina'an's picture if available
+                    role: "Undertray team leader",
+                },{
+                    name: "Omri Haquin Gerade",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Omri Haquin Gerade's picture if available
+                    role: "Rear wing",
+                },{
+                    name: "abed yassin",
+                    picture_url: teamDir + default_url, // Replace with actual URL of abed yassin's picture if available
+                    role: "mechanical - suteam leader",
+                },{
+                    name: "Yam Radecker",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Yam Radecker's picture if available
+                    role: "Front wing",
+                },{
+                    name: "Roaya Egbaria ",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Roaya Egbaria's picture if available
+                    role: "Aerodynamics team leader",
+                },{
+                    name: "Tomer Tsekhman",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Tomer Tsekhman's picture if available
+                    role: "Undertray",
+                },{
+                    name: "Rani Bassal",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Rani Bassal's picture if available
+                    role: "Front wing team leader",
+                },{
+                    name: "Daniel Tarasenko",
+                    picture_url: teamDir + default_url, // Replace with actual URL of Daniel Tarasenko's picture if available
+                    role: "Front wing CFD ",
                 },
-                {
-                    name: "Lior Zehavi",
-                    picture_url: default_url, // Replace with actual URL of Lior Zehavi's picture if available
-                },
-                {
-                    name: "Tzlil Oren",
-                    picture_url: default_url, // Replace with actual URL of Tzlil Oren's picture if available
-                },
-                {
-                    name: "Dan Hunter",
-                    picture_url: default_url, // Replace with actual URL of Dan Hunter's picture if available
-                },
-                {
-                    name: "Gadban Gadban",
-                    picture_url: default_url, // Replace with actual URL of Gadban Gadban's picture if available
-                },
-                {
-                    name: "Michal Amar",
-                    picture_url: default_url, // Replace with actual URL of Michal Amar's picture if available
-                },
+                
             ],
         },
         {
@@ -66,19 +124,16 @@
             teamLeaders: [
                 {
                     name: "Tal Segal",
-                    role: "",
+                    role: "Team Leader",
                     picture_url: default_url,
                 },
             ],
             teamMembers: [
                 {
-                    name: "Abd Yassin",
+                    name: "Omri Haquin Gerade",
                     picture_url: default_url,
                 },
-                {
-                    name: "Amjad Saadi",
-                    picture_url: default_url,
-                },
+                
             ],
         },
         {
@@ -116,13 +171,30 @@
             ],
             teamMembers: [
                 {
-                    name: "Ahmed Ganaim",
-                    picture_url: teamDir + "AhmedGanaim.webp",
+                    name: "Paz Shpilman",
+                    picture_url: teamDir + default_url,
                 },
+                
+            ],
+        },
+        {
+            title: "Low Voltage",
+            teamLeaders: [
                 {
-                    name: "Taufeeq Saed",
-                    picture_url: default_url,
+                    name: "Yara	Abu Raiya",
+                    role: "Low voltage leader",
+                    picture_url: teamDir + default_url,
                 },
+            ],
+            teamMembers: [
+                {
+                    name: "Rand Mahmoud",
+                    picture_url: teamDir + default_url,
+                },{
+                    name: "Aseel Attaria",
+                    picture_url: teamDir + default_url,
+                },
+                
             ],
         },
         {
@@ -136,18 +208,23 @@
             ],
             teamMembers: [
                 {
-                    name: "Gabriel Ganeles",
-                    role: "PCB Design",
+                    name: "Shay Neuhaus",
+                    role: "",
                     picture_url: teamDir + "GabeGaneles.webp",
                 },
                 {
-                    name: "Yahli Sofer",
-                    role: "Communication Protocols",
+                    name: "Bishara Hakim",
+                    role: "",
                     picture_url: default_url,
                 },
                 {
-                    name: "Itay Mal",
-                    role: "Communication Protocols",
+                    name: "Seba Hamed",
+                    role: "",
+                    picture_url: teamDir + "ItayMal.webp",
+                },
+                {
+                    name: "Xintong	Chen",
+                    role: "",
                     picture_url: teamDir + "ItayMal.webp",
                 },
             ],
@@ -156,9 +233,9 @@
             title: "Suspension",
             teamLeaders: [
                 {
-                    name: "Haim Chocron",
+                    name: "Anthony Malshy",
                     role: "Team Leader",
-                    picture_url: teamDir + "HaimChochron.webp",
+                    picture_url: teamDir + default_url,
                 },
             ],
             teamMembers: [
@@ -183,7 +260,7 @@
             ],
             teamMembers: [
                 {
-                    name: "Hala Zoabi",
+                    name: "Daniel Veselov",
                     picture_url: default_url,
                 },
             ],
@@ -265,8 +342,19 @@
             teamLeaders: [
                 {
                     name: "Benjamin Levin",
-                    role: "Team Leader",
+                    role: "steering system",
                     picture_url: teamDir + "BenLevin.webp",
+                },
+            ],
+            teamMembers: [
+                {
+                    name: "Shay Amsterdamer",
+                    role: "steering system",
+                    picture_url: teamDir + "RandMahmoud.webp",
+                },
+                {
+                    name: "Ofek Shechter",
+                    picture_url: teamDir + "OfekShechter.webp",
                 },
             ],
         },
@@ -311,9 +399,9 @@
                     picture_url: teamDir + "RaquelGoldzstejn.webp",
                 },
                 {
-                    name: "Gabriel Ganeles",
-                    role: "Website Design",
-                    picture_url: teamDir + "GabeGaneles.webp",
+                    name: "Mohammad Mrissat",
+                    role: "Website developer",
+                    picture_url: default_url,
                 },
             ],
         },
