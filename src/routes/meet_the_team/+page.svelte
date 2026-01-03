@@ -98,22 +98,9 @@
                     picture_url: default_url, // Replace with actual URL of Noor Kina'an's picture if available
                     role: "Undertray team leader",
                 },{
-                    name: "Omri Haquin Gerade",
-                    picture_url:  default_url, // Replace with actual URL of Omri Haquin Gerade's picture if available
-                    role: "Rear wing",
-                },{
                     name: "abed yassin",
                     picture_url: default_url, // Replace with actual URL of abed yassin's picture if available
                     role: "mechanical - suteam leader",
-                },{
-                    name: "Yam Radecker",
-                    picture_url: default_url, // Replace with actual URL of Yam Radecker's picture if available
-                    role: "Front wing",
-                },
-                {
-                    name: "David Turgeman",
-                    picture_url: default_url, // Replace with actual URL of David Turgeman's picture if available
-                    role: "Front wing",
                 },{
                     name: "Roaya Egbaria ",
                     picture_url:  default_url, // Replace with actual URL of Roaya Egbaria's picture if available
@@ -122,23 +109,31 @@
                     name: "Tomer Tsekhman",
                     picture_url: default_url, // Replace with actual URL of Tomer Tsekhman's picture if available
                     role: "Undertray",
-                },{
+                }
+                
+                
+            ],
+        },{
+            title: "Front-Wing",
+            teamLeaders: [
+                {
                     name: "Rani Bassal",
-                    picture_url: default_url, // Replace with actual URL of Rani Bassal's picture if available
-                    role: "Front wing team leader",
-                },{
+                    role: "Team Leader",
+                    picture_url: default_url,
+                },
+            ],
+            teamMembers: [
+                {
                     name: "Daniel Tarasenko",
-                    picture_url: default_url, // Replace with actual URL of Daniel Tarasenko's picture if available
                     role: "Front wing CFD ",
+                    picture_url: default_url,
                 },
                 {
-                    name: "Ori Gavish",
-                    picture_url: default_url, // Replace with actual URL of Ori Gavish's picture if available
-                    role: "Rear wing ",
+                    name: "David Turgeman",
+                    picture_url: default_url,
                 },
                 {
-                    name: "Gabriel Trostianecki",
-                    role: "Rear wing ",
+                    name: "Yam Radecker",
                     picture_url: default_url,
                 },
                 
