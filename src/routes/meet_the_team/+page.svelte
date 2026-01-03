@@ -80,16 +80,6 @@
             ],
             teamMembers: [
                 {
-                    name: "Nicolas Galagovsky",
-                    picture_url: default_url, // Replace with actual URL of Nicolas Galagovsky's picture if available
-                    role: "Undertray",
-                },
-                {
-                    name: "Raghad Waked",
-                    picture_url: default_url, // Replace with actual URL of Raghad Waked's picture if available
-                    role: "Undertray",
-                },
-                {
                     name: "Abrar Msarwe",
                     picture_url: default_url, // Replace with actual URL of Abrar Msarwe's picture if available
                     role: "mechanical",
@@ -98,19 +88,35 @@
                     picture_url: default_url, // Replace with actual URL of Milan Gershkovitch's picture if available
                     role: "mechanical",
                 },{
-                    name: "Noor Kina'an",
-                    picture_url: default_url, // Replace with actual URL of Noor Kina'an's picture if available
-                    role: "Undertray team leader",
-                },{
                     name: "abed yassin",
                     picture_url: default_url, // Replace with actual URL of abed yassin's picture if available
-                    role: "mechanical - suteam leader",
-                },{
-                    name: "Tomer Tsekhman",
-                    picture_url: default_url, // Replace with actual URL of Tomer Tsekhman's picture if available
-                    role: "Undertray",
+                    role: "mechanical",
                 }
                 
+                
+            ],
+        },{
+            title: "Undertray",
+            teamLeaders: [
+                {
+                    name: "Noor Kina'an",
+                    role: "Team Leader",
+                    picture_url: default_url,
+                },
+            ],
+            teamMembers: [
+                {
+                    name: "Tomer Tsekhman",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Raghad Waked",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Nicolas Galagovsky",
+                    picture_url: default_url,
+                },
                 
             ],
         },{
