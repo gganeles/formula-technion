@@ -72,6 +72,10 @@
                     name: "Adi Atrash",
                     picture_url: default_url, // Replace with actual URL of Adi Atrash's picture if available
                     role: "Team Leader",
+                }, {
+                    name: "Roaya Egbaria",
+                    picture_url: default_url, // Replace with actual URL of Roaya Egbaria's picture if available
+                    role: "Team Leader",
                 },
             ],
             teamMembers: [
@@ -101,10 +105,6 @@
                     name: "abed yassin",
                     picture_url: default_url, // Replace with actual URL of abed yassin's picture if available
                     role: "mechanical - suteam leader",
-                },{
-                    name: "Roaya Egbaria ",
-                    picture_url:  default_url, // Replace with actual URL of Roaya Egbaria's picture if available
-                    role: "Aerodynamics team leader",
                 },{
                     name: "Tomer Tsekhman",
                     picture_url: default_url, // Replace with actual URL of Tomer Tsekhman's picture if available
