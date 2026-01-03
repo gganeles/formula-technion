@@ -45,12 +45,22 @@
                 },
                 {
                     name: "noam yair perlman",
-                    role: "Autonomous Framework Integration",
+                    role: "state estimation and mapping",
                     picture_url: default_url,
                 },
                 {
                     name: "Fady	Mattar",
                     role: "Perception",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Oren Ghelerter",
+                    role: "State Estimation & Mapping",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Yehonatan Reuvenes",
+                    role: "Planning",
                     picture_url: default_url,
                 },
             ],
@@ -67,54 +77,69 @@
             teamMembers: [
                 {
                     name: "Nicolas Galagovsky",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Nicolas Galagovsky's picture if available
+                    picture_url: default_url, // Replace with actual URL of Nicolas Galagovsky's picture if available
                     role: "Undertray",
                 },
                 {
                     name: "Raghad Waked",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Raghad Waked's picture if available
+                    picture_url: default_url, // Replace with actual URL of Raghad Waked's picture if available
                     role: "Undertray",
                 },
                 {
                     name: "Abrar Msarwe",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Abrar Msarwe's picture if available
+                    picture_url: default_url, // Replace with actual URL of Abrar Msarwe's picture if available
                     role: "mechanical",
                 },{
                     name: "Milan Gershkovitch",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Milan Gershkovitch's picture if available
+                    picture_url: default_url, // Replace with actual URL of Milan Gershkovitch's picture if available
                     role: "mechanical",
                 },{
                     name: "Noor Kina'an",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Noor Kina'an's picture if available
+                    picture_url: default_url, // Replace with actual URL of Noor Kina'an's picture if available
                     role: "Undertray team leader",
                 },{
                     name: "Omri Haquin Gerade",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Omri Haquin Gerade's picture if available
+                    picture_url:  default_url, // Replace with actual URL of Omri Haquin Gerade's picture if available
                     role: "Rear wing",
                 },{
                     name: "abed yassin",
-                    picture_url: teamDir + default_url, // Replace with actual URL of abed yassin's picture if available
+                    picture_url: default_url, // Replace with actual URL of abed yassin's picture if available
                     role: "mechanical - suteam leader",
                 },{
                     name: "Yam Radecker",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Yam Radecker's picture if available
+                    picture_url: default_url, // Replace with actual URL of Yam Radecker's picture if available
+                    role: "Front wing",
+                },
+                {
+                    name: "David Turgeman",
+                    picture_url: default_url, // Replace with actual URL of David Turgeman's picture if available
                     role: "Front wing",
                 },{
                     name: "Roaya Egbaria ",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Roaya Egbaria's picture if available
+                    picture_url:  default_url, // Replace with actual URL of Roaya Egbaria's picture if available
                     role: "Aerodynamics team leader",
                 },{
                     name: "Tomer Tsekhman",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Tomer Tsekhman's picture if available
+                    picture_url: default_url, // Replace with actual URL of Tomer Tsekhman's picture if available
                     role: "Undertray",
                 },{
                     name: "Rani Bassal",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Rani Bassal's picture if available
+                    picture_url: default_url, // Replace with actual URL of Rani Bassal's picture if available
                     role: "Front wing team leader",
                 },{
                     name: "Daniel Tarasenko",
-                    picture_url: teamDir + default_url, // Replace with actual URL of Daniel Tarasenko's picture if available
+                    picture_url: default_url, // Replace with actual URL of Daniel Tarasenko's picture if available
                     role: "Front wing CFD ",
+                },
+                {
+                    name: "Ori Gavish",
+                    picture_url: default_url, // Replace with actual URL of Ori Gavish's picture if available
+                    role: "Rear wing ",
+                },
+                {
+                    name: "Gabriel Trostianecki",
+                    role: "Rear wing ",
+                    picture_url: default_url,
                 },
                 
             ],
@@ -133,46 +158,38 @@
                     name: "Omri Haquin Gerade",
                     picture_url: default_url,
                 },
-                
-            ],
-        },
-        {
-            title: "Electronics",
-            teamLeaders: [
                 {
-                    name: "Bracha Silverman",
-                    role: "Team Leader",
-                    picture_url: teamDir + "BrochaSilverman.webp",
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Tomer Ganz",
-                    picture_url: teamDir + "TomerGanz.webp",
-                },
-                {
-                    name: "Yonatan Kennedy",
-                    picture_url: teamDir + "YonatanKennedy.webp",
-                },
-                {
-                    name: "Neave Menahem",
+                    name: "Ori Gavish",
                     picture_url: default_url,
                 },
+                {
+                    name: "Gabriel Trostianecki",
+                    picture_url: default_url,
+                },
+                
             ],
         },
         {
             title: "High Voltage",
             teamLeaders: [
                 {
-                    name: "Charlie Shrem",
+                    name: "Paz Shpilman",
                     role: "Team Leader",
-                    picture_url: teamDir + "CharlieShrem.webp",
+                    picture_url: default_url,
                 },
             ],
             teamMembers: [
                 {
                     name: "Paz Shpilman",
-                    picture_url: teamDir + default_url,
+                    picture_url: default_url,
+                },
+                {
+                    name: "Valerii Asonov",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Rahaf Aburaya",
+                    picture_url:default_url,
                 },
                 
             ],
@@ -183,16 +200,19 @@
                 {
                     name: "Yara	Abu Raiya",
                     role: "Low voltage leader",
-                    picture_url: teamDir + default_url,
+                    picture_url: default_url,
                 },
             ],
             teamMembers: [
                 {
                     name: "Rand Mahmoud",
-                    picture_url: teamDir + default_url,
+                    picture_url: teamDir + "RandMahmoud.webp",
+                },{
+                    name: "Layan Abu Elhija",
+                    picture_url: default_url,
                 },{
                     name: "Aseel Attaria",
-                    picture_url: teamDir + default_url,
+                    picture_url:  default_url,
                 },
                 
             ],
@@ -201,31 +221,31 @@
             title: "Control & Communication",
             teamLeaders: [
                 {
-                    name: "Ilia Fridburg",
+                    name: "Bishara Hakim",
                     role: "Team Leader",
-                    picture_url: teamDir + "IliaFridburg.webp",
+                    picture_url:  default_url,
                 },
             ],
             teamMembers: [
-                {
-                    name: "Shay Neuhaus",
-                    role: "",
-                    picture_url: teamDir + "GabeGaneles.webp",
+                 {
+                    name: "Faheem Knani",
+                    picture_url: default_url,
                 },
                 {
-                    name: "Bishara Hakim",
-                    role: "",
+                    name: "Shay Neuhaus",
                     picture_url: default_url,
                 },
                 {
                     name: "Seba Hamed",
-                    role: "",
-                    picture_url: teamDir + "ItayMal.webp",
+                    picture_url: default_url,
                 },
                 {
-                    name: "Xintong	Chen",
-                    role: "",
-                    picture_url: teamDir + "ItayMal.webp",
+                    name: "Xintong Chen",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Salih Bishara",
+                    picture_url: default_url,
                 },
             ],
         },
@@ -235,7 +255,7 @@
                 {
                     name: "Anthony Malshy",
                     role: "Team Leader",
-                    picture_url: teamDir + default_url,
+                    picture_url: default_url,
                 },
             ],
             teamMembers: [
@@ -253,38 +273,22 @@
             title: "Driver Interface",
             teamLeaders: [
                 {
-                    name: "Ayham Badarneh",
+                    name: "Massad Ayoub",
                     role: "Team Leader",
-                    picture_url: teamDir + "AyhamBadarneh.webp",
+                    picture_url: default_url,
                 },
             ],
             teamMembers: [
                 {
+                    name: "Yarin Aunallah",
+                    picture_url: default_url,
+                },
+                  {
+                    name: "Maxim Lyakhovitsky",
+                    picture_url: default_url,
+                },
+                  {
                     name: "Daniel Veselov",
-                    picture_url: default_url,
-                },
-            ],
-        },
-        {
-            title: "Monocoque R&D",
-            teamLeaders: [
-                {
-                    name: "Dimitri Tribli",
-                    role: "",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Yotam Maor",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Barr Korchia",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Salma Lahwani",
                     picture_url: default_url,
                 },
             ],
@@ -293,92 +297,93 @@
             title: "Chassis",
             teamLeaders: [
                 {
-                    name: "Jawad Soliman",
-                    role: "Team Leader",
-                    picture_url: teamDir + "JawadSoliman.webp",
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Jad Shbita",
-                    picture_url: teamDir + "JadShbita.webp",
-                },
-                {
-                    name: "Marwa Lahwani",
-                    picture_url: teamDir + "MarwaLahwani.webp",
-                },
-            ],
-        },
-        {
-            title: "Powertrain",
-            teamLeaders: [
-                {
-                    name: "Alessio Moscati",
-                    role: "Team Leader",
-                    picture_url: teamDir + "AlessioMoscati.webp",
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Yousef Bawaqni",
-                    picture_url: teamDir + "YousefBawaqni.webp",
-                },
-                {
-                    name: "Aseel Ayoub",
-                    picture_url: teamDir + "AseelAyuob.webp",
-                },
-                {
-                    name: "Daniel Engelberg",
-                    picture_url: teamDir + "DanielEngelberg.webp",
-                },
-                {
-                    name: "Karem Qasim",
-                    picture_url: default_url,
-                },
-            ],
-        },
-        {
-            title: "Mechanisms",
-            teamLeaders: [
-                {
-                    name: "Benjamin Levin",
-                    role: "steering system",
-                    picture_url: teamDir + "BenLevin.webp",
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Shay Amsterdamer",
-                    role: "steering system",
-                    picture_url: teamDir + "RandMahmoud.webp",
-                },
-                {
-                    name: "Ofek Shechter",
-                    picture_url: teamDir + "OfekShechter.webp",
-                },
-            ],
-        },
-        {
-            title: "Integration",
-            teamLeaders: [
-                {
-                    name: "Rozan Araidy",
+                    name: "Shaurya Singh",
                     role: "Team Leader",
                     picture_url: default_url,
                 },
             ],
             teamMembers: [
                 {
-                    name: "Rand Mahmoud",
-                    picture_url: teamDir + "RandMahmoud.webp",
+                    name: "Salwa Hathout",
+                    picture_url: default_url,
                 },
                 {
-                    name: "Ofek Shechter",
-                    picture_url: teamDir + "OfekShechter.webp",
+                    name: "Alisa Natapov",
+                    picture_url: default_url,
                 },
             ],
         },
         {
+            title: "Mechanical",
+            teamLeaders: [
+                {
+                    name: "Omry	Tziperfal",
+                    role: "Team Leader",
+                    picture_url: default_url,
+                },
+            ],
+            teamMembers: [
+                {
+                    name: "Alisa Natapov",
+                    role: "Chasis",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Mansour Abu khadra",
+                    role: "Drive Train",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Ahmad Kanjo",
+                    role: "Cooling",
+                    picture_url: default_url,
+                },{
+                    name: "Karam Qasim",
+                    role: "Drive Train",
+                    picture_url: default_url,
+                }, {
+                    name: "Meir	Edry",
+                    role: "",
+                    picture_url: default_url,
+                }, {
+                    name: "Abdallah	Knana",
+                    role: "Accumulator",
+                    picture_url: default_url,
+                }, {
+                    name: "Mika	Tsukrel",
+                    role: "Accumulator",
+                    picture_url: default_url,
+                }, {
+                    name: "Shay	Amsterdamer",
+                    role: "steering system",
+                    picture_url: default_url,
+                }, {
+                    name: "Daniel Arshavsky ",
+                    role: "Cooling",
+                    picture_url: default_url,
+                }, {
+                    name: "Yonathan	Kupfer",
+                    role: "Accumulator",
+                    picture_url: default_url,
+                }, {
+                    name: "Zijian Liu",
+                    role: "Accumulator",
+                    picture_url: default_url,
+                }, {
+                    name: "Tal Blank",
+                    role: "Cooling",
+                    picture_url: default_url,
+                }, {
+                    name: "MalahiGrady",
+                    role: "Integration",
+                    picture_url: default_url,
+                }, {
+                    name: "May Chervinsky",
+                    role: "Integration Team Leader",
+                    picture_url: default_url,
+                }
+            ],
+        },{
             title: "Media & Marketing",
             teamLeaders: [
                 {
@@ -389,20 +394,55 @@
             ],
             teamMembers: [
                 {
-                    name: "Ryan Fodi",
-                    role: "Media & Marketing",
-                    picture_url: teamDir + "RyanFodi.webp",
+                    name: "Noor	Abd Elhamed",
+                    role: "Media",
+                    picture_url: default_url,
                 },
                 {
-                    name: "Raquel Goldsztejn",
-                    role: "Event Manager",
-                    picture_url: teamDir + "RaquelGoldzstejn.webp",
+                    name: "Rama Khier",
+                    role: "Sponsorship & Marketing leader",
+                    picture_url: default_url,
                 },
                 {
                     name: "Mohammad Mrissat",
                     role: "Website developer",
                     picture_url: default_url,
                 },
+            ],
+        },
+      {
+            title: "Logistics",
+            teamLeaders: [
+                {
+                    name: "",
+                    role: "Team Leader",
+                    picture_url: default_url,
+                },
+            ],
+            teamMembers: [
+                {
+                    name: "Hala	Abd El-Haleem",
+                    role: "Purchasing and Finance",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Eden Abo Tafla",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Noor	Abd Elhamed",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Mattan Shamailov",
+                    role: "Competition",
+                    picture_url: default_url,
+                },
+                {
+                    name: "Dima	Farah",
+                    picture_url: default_url,
+                },
+                
             ],
         },
     ];

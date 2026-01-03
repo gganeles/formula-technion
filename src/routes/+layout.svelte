@@ -8,7 +8,7 @@
 
 	const navbar_items = [
 		{ text: "NEWS", href: "/news" },
-	//	{ text: "MEET THE TEAM", href: "/meet_the_team" },
+		{ text: "MEET THE TEAM", href: "/meet_the_team" },
 		{ text: "CARS", href: "/cars" },
 		{ text: "OUR SPONSORS", href: "/sponsors" },
 		{ text: "THE COMPETITION", href: "/competition" },
