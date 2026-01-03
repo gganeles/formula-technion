@@ -222,7 +222,7 @@
             title: "Control & Communication",
             teamLeaders: [
                 {
-                    name: "Bishara Hakim",
+                    name: "Salih Bishara",
                     role: "Team Leader",
                     picture_url:  default_url,
                 },
@@ -244,10 +244,7 @@
                     name: "Xintong Chen",
                     picture_url: default_url,
                 },
-                {
-                    name: "Salih Bishara",
-                    picture_url: default_url,
-                },
+               
             ],
         },
         {
@@ -411,7 +408,7 @@
             title: "Logistics",
             teamLeaders: [
                 {
-                    name: "",
+                    name: "Rayan Abu-Rahma",
                     role: "Team Leader",
                     picture_url: default_url,
                 },
@@ -446,34 +443,33 @@
 
     const cheifs = [
         {
-            name: "Roi Baruch",
-            role: "Aerodynamics Chief Engineer",
+            name: "Roaya Egbaria",
+            role: "Aerodynamics CO-Chief Engineer",
+            picture_url: default_url,
+        },{
+            name: "Adi Atrash",
+            role: "Aerodynamics CO-Chief Engineer",
             picture_url: default_url,
         },
         {
-            name: "Charlie Shrem",
+            name: "Yara Abu Raiya",
             role: "Electrical Chief Engineer",
-            picture_url: teamDir + "CharlieShrem.webp",
+            picture_url: default_url,
         },
         {
-            name: "Masaad Ayoub",
+            name: "Omry Tziperfal",
             role: "Mechanical Chief Engineer",
-            picture_url: teamDir + "Masaadchuk.webp",
+            picture_url: default_url,
         },
         {
-            name: "Bracha Silverman",
-            role: "Electronics Chief Engineer",
-            picture_url: teamDir + "BrochaSilverman.webp",
-        },
-        {
-            name: "Ilia Fridburg",
+            name: "Salih Bishara",
             role: "Control Chief Engineer",
-            picture_url: teamDir + "IliaFridburg.webp",
+            picture_url: default_url,
         },
         {
-            name: "Karina Shcherbachov",
-            role: "PR Manager",
-            picture_url: teamDir + "Karina.webp",
+            name: "Rayan Abu-Rahma",
+            role: "Logistics Manager",
+            picture_url: default_url,
         },
     ];
 
