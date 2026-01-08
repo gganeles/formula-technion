@@ -27,7 +27,7 @@
 <section class="main text-xl p-8">
 	<h1 class="text-left text-2xl">Who we are:</h1>
 	<div class="main-p">
-		Each year, a group of around 40 students get together and change the
+		Each year, a group of 60 to 100 students get together and change the
 		course of history.
 	</div>
 	<div class="main-p">
@@ -42,7 +42,7 @@
 		by an entirely student run team. Between 2012 and 2020, the team
 		constructed race-cars powered by combustion engines, transitioning to
 		electric combined autonomous vehicles in 2021. The current team consists
-		of 55 students from different faculties at the Technion, namely:
+		of 90 students from different faculties at the Technion, namely:
 		Mechanical engineering, Aeronautical engineering, Computer science, Data
 		Science, Electrical engineering, Biomedical engineering, Physics,
 		Architecture & Material engineering. 
