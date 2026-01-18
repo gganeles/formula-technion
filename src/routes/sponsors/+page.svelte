@@ -2,6 +2,15 @@
     import SponsorGroup from "./SponsorGroup.svelte";
 
     const sponsorsDir = "/images/Sponsors/";
+    const Platinum = [
+        {
+            name: "Altair",
+            url: sponsorsDir + "altair-1_orig.png",
+        },{
+            name: "kisssoft",
+            url: sponsorsDir + "kisssoft-1_orig.png",
+        },
+    ];
     const golds = [
         {
             name: "Multipress",
@@ -57,10 +66,6 @@
         {
             name: "Solidworks",
             url: sponsorsDir + "solidworks-logo-1.png",
-        },
-        {
-            name: "Altair",
-            url: sponsorsDir + "altair-1_orig.png",
         },
         {
             name: "Altium",
@@ -120,6 +125,11 @@
     </div>
 </div>
 <div class="flex flex-col w-full bg-white px-20 max-sm:px-4  pb-40 text-black">
+    <SponsorGroup group={Platinum} 
+    groupName="Platinum Sponsors"
+    gridCols={2}
+    textColor={"text-blue-400"}
+    />
     <SponsorGroup group={golds} groupName="Gold Sponsors"/>
     <SponsorGroup
         group={silvers}
