@@ -17,10 +17,11 @@
     <Image
       src={picture_url}
       
-      class0='h-[15rem] max-md:h-[10rem] object-cover -translate-y-[45px] max-md:-translate-y-[28px]'
-      style="object-position:75% 70%;"
+      class0='h-[15rem] max-md:h-[10rem] object-cover -translate-y-[60px] max-md:-translate-y-[40px]'
+      style="object-position:40% 40%;"
       alt={name}
     />
+    
   </div>
   <h4 class="text-sm max-md:text-xs text-center pt-2.5">{name}</h4>
   {#if role}

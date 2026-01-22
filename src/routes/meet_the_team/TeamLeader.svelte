@@ -16,8 +16,8 @@
         <Image
             src={picture_url}
             alt={name}
-            class0="h-[350px] max-md:h-[250.6px] object-cover -translate-y-[26.7px] max-md:-translate-y-[40px]"
-            style="object-position:75% 70%;"
+            class0="h-[350px] max-md:h-[250.6px] object-cover -translate-y-[90px] max-md:-translate-y-[60px]"
+            style="object-position:40% 40%;"
         />
     </div>
     <h3 class="text-xl text-center pt-2.5">{name}</h3>

@@ -15,7 +15,7 @@
 
     const default_url = "/images/formula.png";
 
-    const teamDir = "/images/meet_the_team/lowerRes/";
+    const teamDir = "/images/meet_the_team/webp/";
     let teamList = [
         {
             title: "Autonomous",
@@ -23,30 +23,30 @@
                 {
                     name: "Bishara Hakim",
                     role: "Autonomous Team Co-Leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "BisharaHakim.webp",
 
                 },
                 {
                     name: "Gabriel Ganeles",
                     role: "Autonomous Team Co-Leader",
-                    picture_url: teamDir + "GabeGaneles.webp",
+                    picture_url: teamDir + "GabeGaneles.JPG",
                 }
             ],
             teamMembers: [
                 {
                     name: "Mohammad Mrissat",
                     role: "Autonomous Framework Integration",
-                    picture_url: default_url,
+                    picture_url: teamDir + "BisharaHakim.webp",
                 },
                 {
                     name: "Aleen Nijim",
                     role: "Autonomous Framework Integration",
-                    picture_url: default_url,
+                    picture_url: teamDir + "AleenNijim.JPG",
                 },
                 {
                     name: "noam yair perlman",
                     role: "state estimation and mapping",
-                    picture_url: default_url,
+                    picture_url: teamDir + "NoamYairPerlman.JPG",
                 },
                 {
                     name: "Fady	Mattar",
@@ -201,7 +201,7 @@
                 {
                     name: "Yara	Abu Raiya",
                     role: "Low voltage leader",
-                    picture_url: default_url,
+                    picture_url: teamDir + "YaraAbuRaya.JPG",
                 },
             ],
             teamMembers: [

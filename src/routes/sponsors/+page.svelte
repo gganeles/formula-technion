@@ -6,10 +6,7 @@
         {
             name: "Altair",
             url: sponsorsDir + "altair-1_orig.png",
-        },{
-            name: "kisssoft",
-            url: sponsorsDir + "kisssoft-1_orig.png",
-        },
+        }
     ];
     const golds = [
         {
@@ -29,7 +26,10 @@
         {
             name: "Grand Technion Energy Program",
             url: sponsorsDir + "grand-technion-energy-program-1_orig.png",
-        }
+        },{
+            name: "kisssoft",
+            url: sponsorsDir + "kisssoft-1_orig.png",
+        },
     ];
     const bronze = [
         {
@@ -127,14 +127,14 @@
 <div class="flex flex-col w-full bg-white px-20 max-sm:px-4  pb-40 text-black">
     <SponsorGroup group={Platinum} 
     groupName="Platinum Sponsors"
-    gridCols={2}
+    gridCols={1}
     textColor={"text-blue-400"}
     />
     <SponsorGroup group={golds} groupName="Gold Sponsors"/>
     <SponsorGroup
         group={silvers}
         groupName="Silver Sponsors"
-        gridCols={1}
+        gridCols={2}
         textColor={"text-slate-400"}
     />
     <SponsorGroup
