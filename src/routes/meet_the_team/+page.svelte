@@ -2,596 +2,113 @@
     import { onMount } from "svelte";
     import FormulaLeader from "./FormulaLeader.svelte";
     import Team from "./Team.svelte";
-    import Saos from "saos";
-    const pictures = import.meta.glob(
-        "/images/meet_the_team/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}",
-        {
-            query: {
-                enhanced: true,
-            },
-        },
-    );
-    let y = 0; // This will hold the scroll position
+    import { formulaLeader, teamList } from "./teamData.js";
 
-    const default_url = "/images/formula.png";
+    let mounted = false;
 
-    const teamDir = "/images/meet_the_team/webp/";
-    let teamList = [
-        {
-            title: "Autonomous",
-            teamLeaders: [
-                {
-                    name: "Bishara Hakim",
-                    role: "Autonomous Team Co-Leader",
-                    picture_url: teamDir + "BisharaHakim.webp",
-
-                },
-                {
-                    name: "Gabriel Ganeles",
-                    role: "Autonomous Team Co-Leader",
-                    picture_url: teamDir + "GabeGaneles.JPG",
-                }
-            ],
-            teamMembers: [
-                {
-                    name: "Mohammad Mrissat",
-                    role: "Autonomous Framework Integration",
-                    picture_url: teamDir + "BisharaHakim.webp",
-                },
-                {
-                    name: "Aleen Nijim",
-                    role: "Autonomous Framework Integration",
-                    picture_url: teamDir + "AleenNijim.JPG",
-                },
-                {
-                    name: "noam yair perlman",
-                    role: "state estimation and mapping",
-                    picture_url: teamDir + "NoamYairPerlman.JPG",
-                },
-                {
-                    name: "Fady	Mattar",
-                    role: "Perception",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Oren Ghelerter",
-                    role: "State Estimation & Mapping",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Yehonatan Reuvenes",
-                    role: "Planning",
-                    picture_url: default_url,
-                },
-            ],
-        },
-        {
-            title: "Aerodynamics",
-            teamLeaders: [
-                {
-                    name: "Adi Atrash",
-                    picture_url: default_url, // Replace with actual URL of Adi Atrash's picture if available
-                    role: "Team Leader",
-                }, {
-                    name: "Roaya Egbaria",
-                    picture_url: default_url, // Replace with actual URL of Roaya Egbaria's picture if available
-                    role: "Team Leader",
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Abrar Msarwe",
-                    picture_url: default_url, // Replace with actual URL of Abrar Msarwe's picture if available
-                    role: "mechanical",
-                },{
-                    name: "Milan Gershkovitch",
-                    picture_url: default_url, // Replace with actual URL of Milan Gershkovitch's picture if available
-                    role: "mechanical",
-                },{
-                    name: "abed yassin",
-                    picture_url: default_url, // Replace with actual URL of abed yassin's picture if available
-                    role: "mechanical",
-                }
-                
-                
-            ],
-        },{
-            title: "Undertray",
-            teamLeaders: [
-                {
-                    name: "Noor Kina'an",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Tomer Tsekhman",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Raghad Waked",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Nicolas Galagovsky",
-                    picture_url: default_url,
-                },
-                
-            ],
-        },{
-            title: "Front-Wing",
-            teamLeaders: [
-                {
-                    name: "Rani Bassal",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Daniel Tarasenko",
-                    role: "Front wing CFD ",
-                    picture_url: default_url,
-                },
-                {
-                    name: "David Turgeman",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Yam Radecker",
-                    picture_url: default_url,
-                },
-                
-            ],
-        },
-        {
-            title: "Rear-Wing",
-            teamLeaders: [
-                {
-                    name: "Tal Segal",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Omri Haquin Gerade",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Ori Gavish",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Gabriel Trostianecki",
-                    picture_url: default_url,
-                },
-                
-            ],
-        },
-        {
-            title: "High Voltage",
-            teamLeaders: [
-                {
-                    name: "Paz Shpilman",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Paz Shpilman",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Valerii Asonov",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Rahaf Aburaya",
-                    picture_url:default_url,
-                },
-                
-            ],
-        },
-        {
-            title: "Low Voltage",
-            teamLeaders: [
-                {
-                    name: "Yara	Abu Raiya",
-                    role: "Low voltage leader",
-                    picture_url: teamDir + "YaraAbuRaya.JPG",
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Rand Mahmoud",
-                    picture_url: teamDir + "RandMahmoud.webp",
-                },{
-                    name: "Layan Abu Elhija",
-                    picture_url: default_url,
-                },{
-                    name: "Aseel Attaria",
-                    picture_url:  default_url,
-                },
-                
-            ],
-        },
-        {
-            title: "Control & Communication",
-            teamLeaders: [
-                {
-                    name: "Salih Bishara",
-                    role: "Team Leader",
-                    picture_url:  default_url,
-                },
-            ],
-            teamMembers: [
-                 {
-                    name: "Faheem Knani",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Shay Neuhaus",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Seba Hamed",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Xintong Chen",
-                    picture_url: default_url,
-                },
-               
-            ],
-        },
-        {
-            title: "Suspension",
-            teamLeaders: [
-                {
-                    name: "Anthony Malshy",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Sharbel Roshrosh",
-                    picture_url: teamDir + "SharbelRoshRosh.webp",
-                },
-                {
-                    name: "Noam Hannoun",
-                    picture_url: teamDir + "NoamHannoun.webp",
-                },
-            ],
-        },
-        {
-            title: "Driver Interface",
-            teamLeaders: [
-                {
-                    name: "Massad Ayoub",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Yarin Aunallah",
-                    picture_url: default_url,
-                },
-                  {
-                    name: "Maxim Lyakhovitsky",
-                    picture_url: default_url,
-                },
-                  {
-                    name: "Daniel Veselov",
-                    picture_url: default_url,
-                },
-            ],
-        },
-        {
-            title: "Chassis",
-            teamLeaders: [
-                {
-                    name: "Shaurya Singh",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Salwa Hathout",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Alisa Natapov",
-                    picture_url: default_url,
-                },
-            ],
-        },
-        {
-            title: "Mechanical",
-            teamLeaders: [
-                {
-                    name: "Omry	Tziperfal",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Alisa Natapov",
-                    role: "Chasis",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Mansour Abu khadra",
-                    role: "Drive Train",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Ahmad Kanjo",
-                    role: "Cooling",
-                    picture_url: default_url,
-                },{
-                    name: "Karam Qasim",
-                    role: "Drive Train",
-                    picture_url: default_url,
-                }, {
-                    name: "Meir	Edry",
-                    role: "",
-                    picture_url: default_url,
-                }, {
-                    name: "Abdallah	Knana",
-                    role: "Accumulator",
-                    picture_url: default_url,
-                }, {
-                    name: "Mika	Tsukrel",
-                    role: "Accumulator",
-                    picture_url: default_url,
-                }, {
-                    name: "Shay	Amsterdamer",
-                    role: "steering system",
-                    picture_url: default_url,
-                }, {
-                    name: "Daniel Arshavsky ",
-                    role: "Cooling",
-                    picture_url: default_url,
-                }, {
-                    name: "Yonathan	Kupfer",
-                    role: "Accumulator",
-                    picture_url: default_url,
-                }, {
-                    name: "Zijian Liu",
-                    role: "Accumulator",
-                    picture_url: default_url,
-                }, {
-                    name: "Tal Blank",
-                    role: "Cooling",
-                    picture_url: default_url,
-                }, {
-                    name: "MalahiGrady",
-                    role: "Integration",
-                    picture_url: default_url,
-                }, {
-                    name: "May Chervinsky",
-                    role: "Integration Team Leader",
-                    picture_url: default_url,
-                }
-            ],
-        },{
-            title: "Media & Marketing",
-            teamLeaders: [
-                {
-                    name: "Rama Khier",
-                    role: "Sponsorship & Marketing leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Noor	Abd Elhamed",
-                    role: "Media",
-                    picture_url: default_url,
-                },
-               
-                {
-                    name: "Mohammad Mrissat",
-                    role: "Website developer",
-                    picture_url: default_url,
-                },
-            ],
-        },
-      {
-            title: "Logistics",
-            teamLeaders: [
-                {
-                    name: "Rayan Abu-Rahma",
-                    role: "Team Leader",
-                    picture_url: default_url,
-                },
-            ],
-            teamMembers: [
-                {
-                    name: "Hala	Abd El-Haleem",
-                    role: "Purchasing and Finance",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Eden Abo Tafla",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Noor	Abd Elhamed",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Mattan Shamailov",
-                    role: "Competition",
-                    picture_url: default_url,
-                },
-                {
-                    name: "Dima	Farah",
-                    picture_url: default_url,
-                },
-                
-            ],
-        },
-    ];
-
-    const cheifs = [
-        {
-            name: "Roaya Egbaria",
-            role: "Aerodynamics CO-Chief Engineer",
-            picture_url: default_url,
-        },{
-            name: "Adi Atrash",
-            role: "Aerodynamics CO-Chief Engineer",
-            picture_url: default_url,
-        },
-        {
-            name: "Yara Abu Raiya",
-            role: "Electrical Chief Engineer",
-            picture_url: default_url,
-        },
-        {
-            name: "Omry Tziperfal",
-            role: "Mechanical Chief Engineer",
-            picture_url: default_url,
-        },
-        {
-            name: "Salih Bishara",
-            role: "Control Chief Engineer",
-            picture_url: default_url,
-        },
-        {
-            name: "Rayan Abu-Rahma",
-            role: "Logistics Manager",
-            picture_url: default_url,
-        },
-    ];
-
-    let yTop = 0;
-    let box;
-    function parseScroll() {
-        yTop = box.scrollTop;
-    }
-
-    onMount(() => parseScroll());
-
-    // A reactive statement that calculates blur value based on scroll position
-    $: blurValue = Math.min(yTop / 30, 20);
+    onMount(() => {
+        mounted = true;
+    });
 </script>
 
 <svelte:head>
     <title>Meet the Team!</title>
-    <meta name="the team page" content="list of team members" />
+    <meta
+        name="description"
+        content="Meet the Formula Student team members, leaders, and subteams."
+    />
 </svelte:head>
 
-<div
-    class="relative flex flex-col items-center scroll-snap snap-y h-screen snap-mandatory overflow-y-scroll"
-    bind:this={box}
-    on:scroll={parseScroll}
->
-    <div
-        class="fixed blur top-0 w-[calc(100vw-5px)] h-screen bg-image"
-        style="--blur:{blurValue}px"
-    ></div>
-    <div
-        class="snap-center text-3xl flex flex-col items-center drop-shadow-xl pt-96 pb-60 w-full"
-    >
-        <div class="text-8xl max-md:text-5xl">Meet the Team</div>
-        <div>that made it all possible</div>
-    </div>
-    <div class="z-1 flex flex-row justify-center">
-        <div class="flex flex-col pt-2 px-4 pb-20 max-md:px-1 w-custom">
-            <div class="snap-center flex flex-col pb-2 md:w-[800px] mx-auto md:pt-8">
-                <h1 class="text-5xl pt-8 pb-4">Management and Operations</h1>
-                <div class="flex flex-row justify-evenly mb-1">
-                    <FormulaLeader
-                        name={"Jawad Soliman"}
-                        role={"Team Leader"}
-                        picture_url={teamDir + "JawadSoliman.webp"}
-                    /> 
-                    
-                </div>
-                <div class="grid grid-cols-3 items-start">
-                    {#each cheifs as cheif}
-                        <FormulaLeader
-                            name={cheif.name}
-                            role={cheif.role}
-                            picture_url={cheif.picture_url}
-                        />
-                    {/each}
-                </div>
-            </div>
-            <div class="">
-                {#each teamList as team}
-                    <div class="snap-center">
-                        <Saos
-                            animation={"slide-in-top-blurred .2s cubic-bezier(.21,.91,.58,.99) both"}
-                            top={300}
-                            animation_out="slide-out-top-blurred .2s cubic-bezier(.45,0,.88,.33) both"
-                        >
-                            <div class="flex flex-col items-center w-full">
-                                <h1 class="pt-12 pb-2 text-4xl">
-                                    {team.title}
-                                </h1>
-                                <Team
-                                    teamLeaders={team.teamLeaders}
-                                    teamMembers={team.teamMembers}
-                                />
-                            </div>
-                        </Saos>
-                    </div>
-                {/each}
-            </div>
+<main class="min-h-screen bg-white text-[#082f49]">
+    <!-- Hero: keeps the original big opening picture -->
+    <section class="hero relative min-h-screen overflow-hidden text-white">
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-black/55"></div>
+
+        <div
+            class={`relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 py-28 text-center transition-opacity duration-500 ${mounted ? "opacity-100" : "opacity-0"}`}
+        >
+            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-white/80 max-md:text-xs">
+                Formula Student Technion
+            </p>
+            <h1 class="text-7xl font-bold tracking-tight drop-shadow-lg max-md:text-5xl">
+                Meet the Team
+            </h1>
+            <p class="mt-4 text-3xl font-semibold text-white/90 drop-shadow max-md:text-xl">
+                that made it all possible
+            </p>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- Whole team leader: Jawad -->
+    <section class="bg-white px-6 py-24 text-[#082f49] max-md:px-4 max-md:py-16">
+        <div class="mx-auto max-w-7xl text-center">
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#076093]/70">
+                Team Leadership
+            </p>
+            <h2 class="mb-12 text-5xl font-bold tracking-tight max-md:text-3xl">
+                Formula Team Leader
+            </h2>
+
+            <FormulaLeader
+                name={formulaLeader.name}
+                role={formulaLeader.role}
+                picture_url={formulaLeader.picture_url}
+                image_position={formulaLeader.image_position}
+                linkedin_url={formulaLeader.linkedin_url}
+            />
+        </div>
+    </section>
+
+    {#each teamList as team, index}
+        <section
+            class={`team-section ${index % 2 === 0 ? "section-blue" : "section-white"}`}
+        >
+            <div class="mx-auto max-w-7xl px-6 py-24 max-md:px-4 max-md:py-16">
+                <div class="mx-auto mb-14 max-w-3xl text-center">
+                    <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] opacity-70">
+                        Subteam {index + 1}
+                    </p>
+                    <h2 class="text-5xl font-bold tracking-tight max-md:text-3xl">
+                        {team.title}
+                    </h2>
+                    {#if team.description}
+                        <p class="mt-4 text-lg leading-8 opacity-80 max-md:text-base">
+                            {team.description}
+                        </p>
+                    {/if}
+                </div>
+
+                <Team
+                    teamLeaders={team.teamLeaders ?? []}
+                    teamMembers={team.teamMembers ?? []}
+                />
+            </div>
+        </section>
+    {/each}
+</main>
 
 <style>
-    .blur {
-        filter: blur(var(--blur));
-    }
-
-    .w-custom {
-        max-width: 1100px;
-    }
-
-    .bg-image {
+    .hero {
         background-image: url("/images/img_7843.webp");
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
-    .z-1 {
-        z-index: 1;
+    .team-section {
+        transition:
+            background-color 180ms ease,
+            color 180ms ease;
     }
 
-    @keyframes -global-slide-in-top-blurred {
-        0% {
-            transform: translateY(-50px);
-            filter: blur(10px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            filter: blur(0px);
-            opacity: 1;
-        }
+    .section-white {
+        background: #ffffff;
+        color: #082f49;
     }
 
-    @keyframes -global-slide-out-top-blurred {
-        0% {
-            filter: blur(0px);
-            opacity: 1;
-        }
-        100% {
-            filter: blur(10px);
-            opacity: 0;
-        }
+    .section-blue {
+        background: #076093;
+        color: #ffffff;
     }
 </style>

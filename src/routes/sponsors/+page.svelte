@@ -29,6 +29,12 @@
         },{
             name: "kisssoft",
             url: sponsorsDir + "kisssoft-1_orig.png",
+        },{
+            name: "Siemens",
+            url: sponsorsDir + "siemens_no_bg.png",
+        },{
+            name: "Kanfit",
+            url: sponsorsDir + "KANFIT.jpeg",
         },
     ];
     const bronze = [
@@ -121,7 +127,7 @@
     <div class="absolute picture w-full h-full"></div>
     <div class="absolute w-full h-full bg-black bg-opacity-40"></div>
     <div class="absolute w-full bottom-14 flex flex-row justify-center">
-        <div class="text-7xl max-sm:text-5xl">Sponsors 2024</div>
+        <div class="text-7xl max-sm:text-5xl">Sponsors 2026</div>
     </div>
 </div>
 <div class="flex flex-col w-full bg-white px-20 max-sm:px-4  pb-40 text-black">
@@ -134,7 +140,7 @@
     <SponsorGroup
         group={silvers}
         groupName="Silver Sponsors"
-        gridCols={2}
+        gridCols={4}
         textColor={"text-slate-400"}
     />
     <SponsorGroup
