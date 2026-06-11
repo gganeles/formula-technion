@@ -83,6 +83,10 @@ const linkedinOverrides = {
     // Add LinkedIn links here only when available.
     // Example:
      "Mohammad Mrissat": "https://www.linkedin.com/in/mohammad-mrissat-ba5a6b315/",
+     "Fady Mattar": "https://www.linkedin.com/in/fady-mattar/"
+
+
+     
 };
 
 const member = (name, role = "Team Member", extra = {}) => ({
@@ -223,12 +227,12 @@ export const teamList = [
         ],
         teamMembers: [
             member("Yehonatan Reuvene", "Autonomous"),
-            member("Fady Mattar", "Autonomous"),
-            member("Mohammad Mrissat", "Autonomous / Website Developer"),
+            member("Fady Mattar", "perception"),
+            member("Mohammad Mrissat", "Autonomous Framework Integration"),
             member("Noam Yair Perlman", "Autonomous"),
             member("Oren Ghelerter", "Autonomous"),
             member("Eva Trope", "Autonomous"),
-            member("Aleen Nijim", "Autonomous"),
+            member("Aleen Nijim", "Autonomous Framework Integration"),
             member("Yogev Kach", "Integration"),
             member("Malahi Grady", "Integration"),
         ],
